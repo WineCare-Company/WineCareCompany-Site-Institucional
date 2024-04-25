@@ -176,7 +176,7 @@ main {
 
 /* BOTÃO - CADASTRA-SE */
 
-.cadastrar div button {
+.cadastrar button {
     padding: 10px;
     font-size: 1rem;
     font-weight: 600;
@@ -184,4 +184,8 @@ main {
     border-radius: 10px;
     background-color: white;
     color: black;
+}
+
+.cadastrar button:hover {
+    cursor: pointer;
 }

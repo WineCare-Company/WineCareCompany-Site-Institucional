@@ -126,6 +126,10 @@ main {
     color: black;
 }
 
+.login button:hover {
+    cursor: pointer;
+}
+
 
 
 /* -------------------- CONTAINER DE CADASTRO -------------------- */
