@@ -27,8 +27,8 @@ main {
 /* CONTAINER DO FORMULÁRIO */
 
 .container {
-    width: 1000px;
-    height: 600px;
+    width: 1200px;
+    height: 650px;
 }
 
 
@@ -50,6 +50,10 @@ main {
     height: 30px;
 }
 
+.icones a {
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* CONTAINER INTERNO */
 

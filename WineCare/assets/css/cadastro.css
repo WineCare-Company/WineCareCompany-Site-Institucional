@@ -27,8 +27,8 @@ main {
 /* CONTAINER DO FORMULÁRIO */
 
 .container {
-    width: 1100px;
-    height: 600px;
+    width: 1200px;
+    height: 650px;
 }
 
 
@@ -50,6 +50,11 @@ main {
     height: 30px;
 }
 
+.icones a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 /* CONTAINER INTERNO */
 
@@ -57,75 +62,9 @@ main {
     width: 100%;
     height: 90%;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
-
-/* -------------------- CONTAINER DE CADASTRO -------------------- */
-
-.form-cadastrar {
-    width: 70%;
-    height: 100%;
-    border-radius: 0 15px 15px 0;
-    gap: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-color: white;
-}
-
-
-/* TITULO DO CONTAINER LOGIN */
-
-.form-cadastrar h1 {
-    font-size: 2rem;
-}
-
-
-/* DIV COM AS INPUTS*/
-
-.divInput {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    gap: 20px;
-}
-
-
-/* LABEL DOS INPUTS */
-
-.divInput p {
-    color: rgb(230, 0, 90);
-}
-
-
-/* INPUTS */
-
-.divInput input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    outline: none;
-}
-
-
-/* BOTÃO - CADASTRAR */
-
-.form-cadastrar button {
-    padding: 10px 70px;
-    margin-top: 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(195, 21, 94);
-    color: white;
-}
 
 
 /* -------------------- CONTAINER LOGIN -------------------- */
@@ -186,3 +125,107 @@ main {
     background-color: white;
     color: black;
 }
+
+
+
+/* -------------------- CONTAINER DE CADASTRO -------------------- */
+
+.form-cadastrar {
+    width: 70%;
+    height: 100%;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+}
+
+
+/* TITULO DO CONTAINER LOGIN */
+
+.form-cadastrar h1 {
+    margin: 35px 0;
+    font-size: 2rem;
+}
+
+
+/* DIV COM AS DIV ESQUERDO - DIREITO*/
+
+.divInput {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* DIV COM AS INPUTS DO LADO ESQUERDO */
+
+.esquerdo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+}
+
+
+/* DIV COM AS INPUTS DO LADO DIREITO */
+
+
+.direito {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* DIV AGRUPANDO INPUT E PARAGRAFO */
+
+.esquerdo div, .direito div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+/* PARAGRAFO */
+
+.esquerdo p, .direito p {
+    width: 97%;
+    font-size: 1.1rem;
+    color: rgb(230, 0, 90);
+}
+
+
+/* INPUTS */
+
+.divInput input {
+    width: 95%;
+    padding: 10px 5px ;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+/* BOTÃO - CADASTRAR */
+
+.form-cadastrar button {
+    padding: 10px 70px;
+    margin: 35px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(195, 21, 94);
+    color: white;
+}
+
