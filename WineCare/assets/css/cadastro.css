@@ -19,7 +19,7 @@ main {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
@@ -200,6 +200,41 @@ main {
 }
 
 
+/* DIV AGRUPANDO INPUT CIDADE E SELECT ESTADO */
+
+.direito div div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+}
+
+
+/* INPUT CIDADE */
+
+#input-estado {
+    width: 70%;
+    padding: 5px 5px ;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+/* SELECT ESTADO */
+
+#select-uf {
+    width: 20%;
+    padding: 4.7px 5px ;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
 /* PARAGRAFO */
 
 .esquerdo p, .direito p {
@@ -213,10 +248,30 @@ main {
 
 .divInput input {
     width: 95%;
-    padding: 10px 5px ;
+    padding: 5px 5px ;
     border: 1px solid gray;
     border-radius: 5px;
     outline: none;
+}
+
+
+/* DIV PARA AGRUPAR CHECKBOX E PARAGRAFO */
+
+.divCheck {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* background-color: #98abd5; */
+}
+
+
+/* PARAGRAFO DA CHECKBOX */
+
+.divCheck p {
+    font-size: 0.7rem;
 }
 
 

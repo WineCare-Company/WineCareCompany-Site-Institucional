@@ -105,7 +105,15 @@
 
                             <div>
                                 <p>Cidade / Estado</p>
-                                <input type="number" placeholder="Ex.: São Paulo" id="">
+
+                                <div>
+                                    <input type="number" placeholder="Ex.: São Paulo" id="input-estado">
+                                    <select id="select-uf">
+                                        <option value="#">UF</option>
+                                        <option>SP</option>
+                                    </select>
+                                </div>
+
                             </div>
 
                         </div>
@@ -113,7 +121,12 @@
 
                     </div>
 
-                    <button>Login</button>
+                    <div class="divCheck">
+                        <input type="checkbox"id="checkbox">
+                        <p>Ao clicar em <b>Cadastrar</b> o cliente declara que concorda em compartilhar seus dados pessoais com nosso Site.</p>
+                    </div>
+
+                    <button>Cadastrar</button>
 
                 </div>
 
