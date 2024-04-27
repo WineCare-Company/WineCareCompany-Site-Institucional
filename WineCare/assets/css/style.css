@@ -222,6 +222,10 @@ main {
         background-size: cover;
     }
 
+    & .card .controleDados {
+        background-image: url(../img/home/DashboardExemplo.jpg);
+        background-size: cover;
+    }
 
     & .card p {
         margin-top: 50px;
