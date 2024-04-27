@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/dash2.css">
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- TITLE -->
     <title>DashBoard - 2</title>
 </head>
@@ -42,7 +44,7 @@
                         <li><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
                         <li><img class="icone" src="../assets/img/dashboard/note.png">Anotações</li>
                     </ul>
-                    
+
                 </nav>
 
                 <!-- LISTA DE SALAS -->
@@ -162,7 +164,7 @@
                 <!-- MEIO -->
 
                 <div class="sensores">
-                    
+
                     <div class="titulo">
 
                         <p>Histórico de Temperaturas - (Barril Nº 23)</p>
@@ -171,6 +173,35 @@
 
                     </div>
 
+                    <div class="metricas-cima">
+
+                        <div class="grafico1">
+                            <canvas id="line"></canvas>
+                        </div>
+
+                        <div class="kpis">
+
+                            <div class="kpis1">
+                                <img src="../assets/img/dashboard/kpi1.png" alt="">
+                                <span>Temperatura</span>
+                            </div>
+    
+                            <div class="kpis2">
+                                <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                <span>Temperatura</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="metricas-baixo">
+
+                        <div class="grafico2">
+                            <canvas id="bar"></canvas>
+                        </div>
+
+                    </div>
 
 
                 </div>
@@ -184,3 +215,46 @@
 </body>
 
 </html>
+
+<script>
+    const ctx1 = document.getElementById('line');
+    const ctx2 = document.getElementById('bar');
+
+    new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
+            datasets: [{
+                label: '',
+                data: [15, 20, 22, 26, 16, 18, 29],
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
+            datasets: [{
+                label: '',
+                data: [15, 20, 22, 26, 16, 18, 29],
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
