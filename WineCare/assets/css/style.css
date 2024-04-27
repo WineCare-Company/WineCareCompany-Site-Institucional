@@ -217,6 +217,11 @@ main {
         background-size: cover;
     }
 
+    & .card .sistemaWeb {
+        background-image: url(../img/home/DashboardDark.jpg);
+        background-size: cover;
+    }
+
 
     & .card p {
         margin-top: 50px;
