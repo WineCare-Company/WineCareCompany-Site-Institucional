@@ -126,7 +126,6 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
-
     color: #e40d60;
 }
 
@@ -138,11 +137,41 @@ main {
 }
 
 
+/* DIV DOS BOTOES */
+
+.botoes {
+    width: 100%;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    /* background-color: #0eda6f; */
+}
+
+
+/* BOTÃO ATUALIZAR DADOS */
+
+.botoes button {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #c3155e;
+    color: white;
+    transition: 0.2s;
+}
+
+.botoes button:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #e1186c;
+}
+
+
 /* DIV SAIR  */
 
 .sair {
     width: 100%;
-    margin-top: 180px;
+    margin-top: 50px;
     padding: 20px 10px;
     border-top: 1px solid #e40d60;
     display: flex;
