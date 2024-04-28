@@ -141,30 +141,50 @@ main {
 
 .botoes {
     width: 100%;
-    margin-top: 120px;
+    margin-top: 80px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: left;
+    gap: 5px;
     /* background-color: #0eda6f; */
 }
 
 
-/* BOTÃO ATUALIZAR DADOS */
+/* CONFIGURAÇÃO PARA OS BOTÕES */
 
 .botoes button {
     width: 70%;
     padding: 10px;
     border: 1px solid white;
     border-radius: 10px;
-    background-color: #c3155e;
     color: white;
     transition: 0.2s;
-    
+    cursor: pointer;
+
 }
 
-.botoes button:hover {
+
+/* BOTÃO ATUALIZAR DADOS */
+
+#btn-atualizar {
+    background-color: #c3155e;
+}
+
+#btn-atualizar:hover {
     transition: 0.2s;
-    cursor: pointer;
     background-color: #e1186c;
+}
+
+
+/* BOTÃO VOLTAR */
+
+#btn-voltar {
+    background-color: #1b0a13;
+}
+
+#btn-voltar:hover {
+    transition: 0.2s;
+    background-color: #1b0a13de;
 }
 
 
@@ -308,7 +328,7 @@ main {
 .grafico1 {
     width: 75%;
     height: 100%;
-    background-color: #98abd5;
+    /* background-color: #98abd5; */
 }
 
 .kpis {
