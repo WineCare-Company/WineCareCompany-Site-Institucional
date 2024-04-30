@@ -345,6 +345,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    /* background-color: #13bad7; */
 }
 
 

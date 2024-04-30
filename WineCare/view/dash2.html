@@ -215,7 +215,7 @@
 
                             <div class="titulo">
 
-                                <p>Média de Oscilações Semanais - (Barril Nº 23)</p>
+                                <p>Histórico de Umidade Durante a Semana - (Barril Nº 23)</p>
 
                             </div>
 
@@ -281,9 +281,9 @@
     new Chart(ctx1, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
+            labels: ['0h', '1h', '2h', '3h', '4h', '5h', '6h', '7h', '8h', '9h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h', '19h', '20h', '21h', '22h', '23h'],
             datasets: [{
-                label: '',
+                label: 'Temperatura',
                 data: [15, 20, 22, 26, 16, 18, 29],
                 borderWidth: 2,
             }]
@@ -302,17 +302,18 @@
         data: {
             labels: ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'],
             datasets: [{
-                label: '',
-                data: [15, 20, 22, 26, 16, 18, 29],
+                label: 'Umidade',
+                data: [15, 20, 22, 26, 16, 18, 29, 100],
                 borderWidth: 2,
             }]
         },
         options: {
+            responsive: true,
             scales: {
                 y: {
                     beginAtZero: true
                 }
             }
-        }
+        },
     });
 </script>
