@@ -65,7 +65,8 @@ main {
 /* LOGO DE PERFIL */
 
 .perfil img {
-    height: 50px;
+    width: 100%;
+    max-width: 50px;
 }
 
 
@@ -97,7 +98,8 @@ main {
 }
 
 .configuracoes img {
-    height: 30px;
+    width: 100%;
+    max-width: 30px;
 }
 
 
@@ -133,7 +135,8 @@ main {
 /* IMAGEM DA LISTA DE SALAS */
 
 .salas img {
-    height: 30px;
+    width: 100%;
+    max-width: 30px;
 }
 
 
@@ -204,7 +207,8 @@ main {
 /* IMAGEM DA DIV SAIR */
 
 .sair img {
-    height: 30px;
+    width: 100%;
+    max-width: 30px;
 }
 
 
@@ -247,6 +251,9 @@ main {
     flex-direction: row;
 }
 
+
+/* DIV DA IMAGEM - KPI */
+
 .image {
     width: 50%;
     height: 100%;
@@ -254,6 +261,17 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+
+/* IMAGEM DA KPI */
+
+.image img {
+    width: 100%;
+    max-width: 40px;
+}
+
+
+/* SEGUNDA DIV - LABEL */
 
 .card div:nth-of-type(2) {
     width: 50%;
@@ -265,6 +283,9 @@ main {
     align-items: flex-end;
     text-align: right;
 }
+
+
+/* PARAGRAFO */
 
 .card div p {
     color: #0eda6f;
@@ -293,67 +314,53 @@ main {
 
 /* MEIO DA DASH */
 
-.sensores {
+.meio {
     width: 100%;
     height: 80%;
     border: 1px solid #e40d60;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
+
+/* METRICAS DO LADO ESQUERDO - GRAFICOS */
+
+.metricas-esquerda {
+    width: 70%;
+    height: 100%;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* GRAFICOS*/
+
+.grafico {
+    width: 100%;
+    height: 50%;
+}
 
 /* DIV COM OS TITULOS */
 
 .titulo {
     width: 100%;
-    height: 8%;
-    padding: 0 40px;
+    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
+/* SPAN - DATA */
 
-.metricas-cima {
-    width: 100%;
-    height: 50%;
-    padding: 0 30px;
-
-    display: flex;
-    flex-direction: row;
-
-    /* background-color: #0eda6f; */
+.titulo span {
+    color: #e1186c;
 }
 
-.grafico1 {
-    width: 75%;
-    height: 100%;
-    /* background-color: #98abd5; */
-}
-
-.kpis {
-    width: 25%;
-    height: 100%;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    /* background-color: #0eda6f; */
-}
-
-.kpis1,.kpis2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* background-color: #0eda6f; */
-}
-
-.kpis img {
-    width: 70%;
-}
-
-
+/* CONFIGURAÇÃO GLOBAL PARA O GRAFICO */
 
 canvas {
     max-width: 100%;
@@ -362,19 +369,53 @@ canvas {
 }
 
 
+/* DIV QUE AGRUPA A TAG CANVAS */
+
+.linha, .barra {
+    width: 100%;
+    height: 80%;
+}
+
+
+/* METRICAS DO LADO DIREITO */
+
+.metricas-direita {
+    width: 30%;
+    height: 100%;
+}
+
+
+/* METRICAS DO TOPO */
+
+.metricas-topo {
+    width: 100%;
+    height: 50%;
+}
+
+
+/* DIV QUE AGRUPA A IMAGEM E SUA LABEL */
+
+.metricas-topo div{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGEM */
+
+.metricas-topo img {
+    width: 100%;
+    max-width: 150px;
+    
+}
+
+/* METRICAS DE BAIXO */
 
 .metricas-baixo {
     width: 100%;
-    height: 40%;
-    margin-top: 10px;
-    padding: 0 30px;
-
-    display: flex;
-    flex-direction: row;
-
-    /* background-color: #0eda6f; */
-}
-
-.grafico2 {
-    width: 75%;
+    height: 50%;
+    background-color: #98abd5;
 }

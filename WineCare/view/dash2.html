@@ -43,9 +43,9 @@
                 <nav class="configuracoes">
 
                     <ul>
-                        <li><img class="icone" src="../assets/img/dashboard/settings.png">Configurações</li>
+                        <li><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
                         <li><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
-                        <li><img class="icone" src="../assets/img/dashboard/note.png">Anotações</li>
+                        <li><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões</li>
                     </ul>
 
                 </nav>
@@ -176,44 +176,84 @@
 
                 </div>
 
+
                 <!-- MEIO -->
 
-                <div class="sensores">
+                <div class="meio">
 
-                    <div class="titulo">
 
-                        <p>Histórico de Temperaturas - (Barril Nº 23)</p>
+                    <!-- METRICAS DA ESQUERDA - GRAFICOS -->
 
-                        <span>10/04/2024</span>
+                    <div class="metricas-esquerda">
+
+                        <!-- PRIMEIRO GRÁFICO -->
+
+                        <div class="grafico">
+
+                            <!-- TITULO DO GRAFICO -->
+
+                            <div class="titulo">
+
+                                <p>Histórico de Temperaturas - (Barril Nº 23)</p>
+    
+                                <span>10/04/2024</span>
+    
+                            </div>
+
+                            <!-- GRAFICO -->
+
+                            <div class="linha">
+                                <canvas id="line"></canvas>
+                            </div>
+
+                        </div>
+
+
+                        <!-- SEGUNDO GRAFICO -->
+
+                        <div class="grafico">
+
+                            <!-- TITULO DO GRAFICO -->
+
+                            <div class="titulo">
+
+                                <p>Média de Oscilações Semanais - (Barril Nº 23)</p>
+    
+                                <span>10/04/2024</span>
+    
+                            </div>
+
+                            <!-- GRAFICO -->
+
+                            <div class="barra">
+                                <canvas id="bar"></canvas>
+                            </div>
+
+                        </div>
 
                     </div>
 
-                    <div class="metricas-cima">
 
-                        <div class="grafico1">
-                            <canvas id="line"></canvas>
-                        </div>
+                    <!-- METRICAS DA DIREITA -->
 
-                        <div class="kpis">
+                    <div class="metricas-direita">
 
-                            <div class="kpis1">
+                        <div class="metricas-topo">
+
+                            <div>
                                 <img src="../assets/img/dashboard/kpi1.png" alt="">
-                                <span>Temperatura</span>
+                                <p>Temperatura</p>
                             </div>
 
-                            <div class="kpis2">
+                            <div>
                                 <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                <span>Temperatura</span>
+                                <p>Umidade</p>
                             </div>
 
                         </div>
 
-                    </div>
+                        <div class="metricas-baixo">
 
-                    <div class="metricas-baixo">
-
-                        <div class="grafico2">
-                            <canvas id="bar"></canvas>
                         </div>
 
                     </div>
