@@ -198,6 +198,7 @@ main {
     margin-top: 50px;
     padding: 20px 10px;
     border-top: 1px solid #e40d60;
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -209,6 +210,17 @@ main {
 .sair img {
     width: 100%;
     max-width: 30px;
+}
+
+.sair a {
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.sair a:hover {
+    transition: 0.2s;
+    color: #e40d60;
 }
 
 
