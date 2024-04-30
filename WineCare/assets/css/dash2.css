@@ -350,7 +350,7 @@ main {
     height: 10%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
 }
 
@@ -382,6 +382,7 @@ canvas {
 .metricas-direita {
     width: 30%;
     height: 100%;
+    padding: 10px 30px;
 }
 
 
@@ -390,25 +391,48 @@ canvas {
 .metricas-topo {
     width: 100%;
     height: 50%;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* DIV DA DATA */
+
+.data {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;   
+}
+
+.data span {
+    color: #e1186c; 
 }
 
 
 /* DIV QUE AGRUPA A IMAGEM E SUA LABEL */
 
-.metricas-topo div{
+.metricas-topo .temperatura, .metricas-topo .umidade{
     width: 100%;
-    height: 50%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+/* LABEL */
+
+.metricas-topo p{
+    font-size: 0.9rem;
+}
+
 /* IMAGEM */
 
 .metricas-topo img {
     width: 100%;
-    max-width: 150px;
+    max-width: 130px;
     
 }
 
@@ -417,5 +441,12 @@ canvas {
 .metricas-baixo {
     width: 100%;
     height: 50%;
-    background-color: #98abd5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.metricas-baixo img {
+    width: 100%;
+    max-width: 100px;
 }
