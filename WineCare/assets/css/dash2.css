@@ -341,7 +341,7 @@ main {
 .metricas-esquerda {
     width: 70%;
     height: 100%;
-    padding: 10px 30px;
+    padding: 20px 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -394,7 +394,7 @@ canvas {
 .metricas-direita {
     width: 30%;
     height: 100%;
-    padding: 10px 30px;
+    padding: 20px 30px;
 }
 
 
@@ -444,7 +444,7 @@ canvas {
 
 .metricas-topo img {
     width: 100%;
-    max-width: 130px;
+    max-width: 120px;
     
 }
 
