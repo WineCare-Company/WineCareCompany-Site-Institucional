@@ -9,15 +9,25 @@
     <link rel="stylesheet" href="../assets/css/cadastro.css">
     <!-- JS -->
     <script src="../assets/js/trocaPagina.js"></script>
+    <script src="../assets/js/mascaraTelefone.js"></script>
     <!-- TITLE -->
     <title>Cadastro</title>
 </head>
 
 <body>
 
+
+    <!-- CONTAINER PRINCIPAL -->
+
     <main>
 
+
+        <!-- CONTAINER -->
+
         <div class="container">
+
+
+            <!-- DIV COM OS ICONES -->
 
             <div class="icones">
 
@@ -29,7 +39,13 @@
             
             </div>
 
+
+            <!-- CONTENT  -->
+
             <div class="content">
+
+
+                <!-- CONTAINER DE LOGIN -->
 
                 <div class="login">
 
@@ -45,11 +61,19 @@
 
                 </div>
 
+
+                <!-- CONTAINER DE CADASTRO -->
+
                 <div class="form-cadastrar">
 
                     <h1>Crie sua Conta</h1>
 
+
+                    <!-- DIV QUE AGRUPA AS INPUTS DO LADO ESQUERDO E DIREITO -->
+
                     <div class="divInput">
+
+                        <!-- LADO ESQUERDO -->
 
                         <div class="esquerdo">
 
@@ -68,17 +92,10 @@
                                 <input type="email" id="">
                             </div>
 
-                            <div>
-                                <p>Logradouro</p>
-                                <input type="text" id="">
-                            </div>
-
-                            <div>
-                                <p>Bairro</p>
-                                <input type="text" id="">
-                            </div>
-
                         </div>
+
+
+                        <!-- LADO DIREITO -->
 
                         <div class="direito">
 
@@ -89,7 +106,7 @@
 
                             <div>
                                 <p>Telefone</p>
-                                <input type="text" id="">
+                                <input type="tel" maxlength="15" id="" onkeyup="telefone(event)">
                             </div>
 
                             <div>
@@ -97,60 +114,21 @@
                                 <input type="password" id="">
                             </div>
 
-
-                            <div>
-                                <p>Complemento</p>
-                                <input type="text" id="">
-                            </div>
-
-                            <div>
-                                <p>Cidade / Estado</p>
-
-                                <div>
-                                    <input type="text"  id="input-estado">
-                                    <select id="select-uf">
-                                        <option value="#"></option>
-                                        <option value="AC">AC</option>
-                                        <option value="AL">AL</option>
-                                        <option value="AP">AP</option>
-                                        <option value="AM">AM</option>
-                                        <option value="BA">BA</option>
-                                        <option value="CE">CE</option>
-                                        <option value="DF">DF</option>
-                                        <option value="ES">ES</option>
-                                        <option value="GO">GO</option>
-                                        <option value="MA">MA</option>
-                                        <option value="MT">MT</option>
-                                        <option value="MS">MS</option>
-                                        <option value="MG">MG</option>
-                                        <option value="PA">PA</option>
-                                        <option value="PB">PB</option>
-                                        <option value="PR">PR</option>
-                                        <option value="PE">PE</option>
-                                        <option value="PI">PI</option>
-                                        <option value="RJ">RJ</option>
-                                        <option value="RN">RN</option>
-                                        <option value="RS">RS</option>
-                                        <option value="RO">RO</option>
-                                        <option value="RR">RR</option>
-                                        <option value="SC">SC</option>
-                                        <option value="SP">SP</option>
-                                        <option value="SE">SE</option>
-                                        <option value="TO">TO</option>
-                                    </select>
-                                </div>
-
-                            </div>
-
                         </div>
 
 
                     </div>
 
+
+                    <!-- DIV COM O CHECKBOX -->
+
                     <div class="divCheck">
                         <input type="checkbox"id="checkbox">
                         <p>Ao clicar em <b>Cadastrar</b> o cliente declara que concorda em compartilhar seus dados pessoais com nosso Site.</p>
                     </div>
+
+
+                    <!-- BOTÃO PARA CADASTRA-SE -->
 
                     <button>Cadastrar</button>
 
