@@ -43,11 +43,13 @@ main {
 }
 
 .icones img {
-    height: 30px;
+    width: 100%;
+    max-width: 30px;
 }
 
 .icones #icone {
-    height: 30px;
+    width: 100%;
+    max-width: 30px;
 }
 
 .icones a {
@@ -287,4 +289,3 @@ main {
     background-color: rgb(195, 21, 94);
     color: white;
 }
-
