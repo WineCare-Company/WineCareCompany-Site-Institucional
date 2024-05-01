@@ -142,7 +142,7 @@ main {
     border-radius: 0 15px 15px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: white;
 }
@@ -151,7 +151,6 @@ main {
 /* TITULO DO CONTAINER LOGIN */
 
 .form-cadastrar h1 {
-    margin: 35px 0;
     font-size: 2rem;
 }
 
@@ -165,6 +164,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 20px;
+
 }
 
 
@@ -176,12 +176,10 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-
 }
 
 
 /* DIV COM AS INPUTS DO LADO DIREITO */
-
 
 .direito {
     width: 50%;
@@ -189,6 +187,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+
 }
 
 
@@ -214,29 +213,6 @@ main {
 }
 
 
-/* INPUT CIDADE */
-
-#input-estado {
-    width: 70%;
-    padding: 5px 5px ;
-    border: 1px solid gray;
-    border-radius: 5px;
-    outline: none;
-}
-
-
-/* SELECT ESTADO */
-
-#select-uf {
-    width: 20%;
-    padding: 4.7px 5px ;
-    border: 1px solid gray;
-    border-radius: 5px;
-    outline: none;
-}
-
-
-
 /* PARAGRAFO */
 
 .esquerdo p, .direito p {
@@ -249,24 +225,24 @@ main {
 /* INPUTS */
 
 .divInput input {
-    width: 95%;
-    padding: 5px 5px ;
+    width: 100%;
+    padding: 10px ;
     border: 1px solid gray;
     border-radius: 5px;
     outline: none;
+    box-sizing: border-box;
 }
 
 
 /* DIV PARA AGRUPAR CHECKBOX E PARAGRAFO */
 
 .divCheck {
-    margin-top: 35px;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    /* background-color: #98abd5; */
 }
 
 
@@ -281,7 +257,7 @@ main {
 
 .form-cadastrar button {
     padding: 10px 70px;
-    margin: 35px 0;
+    /* margin: 35px 0; */
     font-size: 1rem;
     font-weight: 600;
     border: none;
