@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/dash2.css">
+    <link rel="stylesheet" href="../assets/css/dash.css">
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/trocaConteudo.js"></script>
     <!-- TITLE -->
-    <title>DashBoard - 2</title>
+    <title>DashBoard</title>
 </head>
 
 <body>
@@ -43,9 +44,11 @@
                 <nav class="configuracoes">
 
                     <ul>
-                        <li><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
-                        <li><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
-                        <li><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões</li>
+                        <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
+                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações
+                        </li>
+                        <li id="configuracoes"><img class="icone"
+                                src="../assets/img/dashboard/settings.png">Configuracões</li>
                     </ul>
 
                 </nav>
@@ -87,182 +90,195 @@
 
             <!-- DASHBOARD -->
 
-            <div class="dash">
+            <div id="dashboard-content" style="display: block;">
 
-                <!-- TOPO -->
 
-                <div class="topo">
+                <div class="dash">
 
-                    <div class="card">
+                    <!-- TOPO -->
 
-                        <div class="image">
+                    <div class="topo">
 
-                            <img src="../assets/img/dashboard/sensor.png" alt="">
+                        <div class="card">
+
+                            <div class="image">
+
+                                <img src="../assets/img/dashboard/sensor.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <p class="sensor-quantidade">105/105</p>
+
+                                <span>Sensores Conectados</span>
+
+                            </div>
 
                         </div>
 
-                        <div>
+                        <div class="card">
 
-                            <p class="sensor-quantidade">105/105</p>
+                            <div class="image">
 
-                            <span>Sensores Conectados</span>
+                                <img src="../assets/img/dashboard/adequado.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <div>
+                                    <p class="sensor-quantidade">83</p>
+                                    <p class="temp">~16ºC</p>
+                                </div>
+
+                                <span>Barris Adequados</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+
+                            <div class="image">
+
+                                <img src="../assets/img/dashboard/gelado.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <div>
+                                    <p class="sensor-quantidade sensor-gelado">14</p>
+                                    <p class="temp">~10ºC</p>
+                                </div>
+
+                                <span>Sensores Gelados</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+
+                            <div class="image">
+
+                                <img src="../assets/img/dashboard/quente.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <div>
+                                    <p class="sensor-quantidade sensor-quente">7</p>
+                                    <p class="temp">~27ºC</p>
+                                </div>
+
+                                <span>Sensores Quentes</span>
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                    <div class="card">
 
-                        <div class="image">
+                    <!-- MEIO -->
 
-                            <img src="../assets/img/dashboard/adequado.png" alt="">
+                    <div class="meio">
 
-                        </div>
 
-                        <div>
+                        <!-- METRICAS DA ESQUERDA - GRAFICOS -->
 
-                            <div>
-                                <p class="sensor-quantidade">83</p>
-                                <p class="temp">~16ºC</p>
+                        <div class="metricas-esquerda">
+
+                            <!-- PRIMEIRO GRÁFICO -->
+
+                            <div class="grafico">
+
+                                <!-- TITULO DO GRAFICO -->
+
+                                <div class="titulo">
+
+                                    <p>Histórico de Temperaturas - (Barril Nº 23)</p>
+
+                                </div>
+
+                                <!-- GRAFICO -->
+
+                                <div class="linha">
+                                    <canvas id="line"></canvas>
+                                </div>
+
                             </div>
 
-                            <span>Barris Adequados</span>
 
-                        </div>
+                            <!-- SEGUNDO GRAFICO -->
 
-                    </div>
+                            <div class="grafico">
 
-                    <div class="card">
+                                <!-- TITULO DO GRAFICO -->
 
-                        <div class="image">
+                                <div class="titulo">
 
-                            <img src="../assets/img/dashboard/gelado.png" alt="">
+                                    <p>Histórico de Umidade Durante a Semana - (Barril Nº 23)</p>
 
-                        </div>
+                                </div>
 
-                        <div>
+                                <!-- GRAFICO -->
 
-                            <div>
-                                <p class="sensor-quantidade sensor-gelado">14</p>
-                                <p class="temp">~10ºC</p>
+                                <div class="barra">
+                                    <canvas id="bar"></canvas>
+                                </div>
+
                             </div>
 
-                            <span>Sensores Gelados</span>
-
                         </div>
 
-                    </div>
 
-                    <div class="card">
+                        <!-- METRICAS DA DIREITA -->
 
-                        <div class="image">
+                        <div class="metricas-direita">
 
-                            <img src="../assets/img/dashboard/quente.png" alt="">
+                            <div class="metricas-topo">
 
-                        </div>
+                                <div class="data">
+                                    <p>Métricas Atual</p>
+                                    <span>10/04/2024</span>
+                                </div>
 
-                        <div>
+                                <div class="temperatura">
+                                    <img src="../assets/img/dashboard/kpi1.png" alt="">
+                                    <p>Temperatura</p>
+                                </div>
 
-                            <div>
-                                <p class="sensor-quantidade sensor-quente">7</p>
-                                <p class="temp">~27ºC</p>
+                                <div class="umidade">
+                                    <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                    <p>Umidade</p>
+                                </div>
+
                             </div>
 
-                            <span>Sensores Quentes</span>
+                            <div class="metricas-baixo">
+
+                                <img src="../assets/img/dashboard/select.png" alt="">
+
+                            </div>
 
                         </div>
+
 
                     </div>
 
                 </div>
 
+            </div>
 
-                <!-- MEIO -->
+            <div id="notificacoes-content" style="display: none;">
 
-                <div class="meio">
+            </div>
 
-
-                    <!-- METRICAS DA ESQUERDA - GRAFICOS -->
-
-                    <div class="metricas-esquerda">
-
-                        <!-- PRIMEIRO GRÁFICO -->
-
-                        <div class="grafico">
-
-                            <!-- TITULO DO GRAFICO -->
-
-                            <div class="titulo">
-
-                                <p>Histórico de Temperaturas - (Barril Nº 23)</p>
-
-                            </div>
-
-                            <!-- GRAFICO -->
-
-                            <div class="linha">
-                                <canvas id="line"></canvas>
-                            </div>
-
-                        </div>
-
-
-                        <!-- SEGUNDO GRAFICO -->
-
-                        <div class="grafico">
-
-                            <!-- TITULO DO GRAFICO -->
-
-                            <div class="titulo">
-
-                                <p>Histórico de Umidade Durante a Semana - (Barril Nº 23)</p>
-
-                            </div>
-
-                            <!-- GRAFICO -->
-
-                            <div class="barra">
-                                <canvas id="bar"></canvas>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- METRICAS DA DIREITA -->
-
-                    <div class="metricas-direita">
-
-                        <div class="metricas-topo">
-
-                            <div class="data">
-                                <p>Métricas Atual</p>
-                                <span>10/04/2024</span>
-                            </div>
-
-                            <div class="temperatura">
-                                <img src="../assets/img/dashboard/kpi1.png" alt="">
-                                <p>Temperatura</p>
-                            </div>
-
-                            <div class="umidade">
-                                <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                <p>Umidade</p>
-                            </div>
-
-                        </div>
-
-                        <div class="metricas-baixo">
-
-                            <img src="../assets/img/dashboard/select.png" alt="">
-
-                        </div>
-
-                    </div>
-
-
-                </div>
+            <div id="configuracoes-content" style="display: none;">
 
             </div>
 

@@ -95,6 +95,13 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.configuracoes ul li:hover {
+    transition: 0.2s;
+    color: #e1186c;
 }
 
 .configuracoes img {
@@ -224,10 +231,19 @@ main {
 }
 
 
+/* CONTAINER DA DASHBOARD */
+
+#dashboard-content {
+    width: 80%;
+    height: 100%;
+    /* background-color: #0eda6f; */
+}
+
+
 /* DASHBOARD */
 
 .dash {
-    width: 80%;
+    width: 100%;
     height: 100%;
     padding: 30px;
     display: flex;
@@ -462,4 +478,22 @@ canvas {
 .metricas-baixo img {
     width: 100%;
     max-width: 100px;
+}
+
+
+/* CONTAINER DAS NOTIFICAÇÕES */
+
+#notificacoes-content {
+    width: 80%;
+    height: 100%;
+    background-color: yellow;
+}
+
+
+/* CONTAINER DAS CONFIGURAÇÕES */
+
+#configuracoes-content {
+    width: 80%;
+    height: 100%;
+    background-color: blue;
 }
