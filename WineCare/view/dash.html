@@ -44,13 +44,15 @@
 
                 <nav class="secoes">
 
-                    
+
                     <!-- DASHBOARD - NOTIFICAÇÕES - CONFIGURAÇÕES -->
 
                     <ul>
                         <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
-                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
-                        <li id="configuracoes"><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões</li>
+                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações
+                        </li>
+                        <li id="configuracoes"><img class="icone"
+                                src="../assets/img/dashboard/settings.png">Configuracões</li>
                     </ul>
 
 
@@ -180,7 +182,7 @@
 
                                 <div class="titulo">
 
-                                    <p>Histórico de Temperaturas - (Barril Nº 1)</p>
+                                    <p>Histórico de Temperaturas Diária - (Barril Nº 1)</p>
 
                                 </div>
 
@@ -201,7 +203,7 @@
 
                                 <div class="titulo">
 
-                                    <p>Histórico de Umidade Durante a Semana - (Barril Nº 1)</p>
+                                    <p>Histórico de Umidade Diária - (Barril Nº 1)</p>
 
                                 </div>
 
@@ -232,16 +234,14 @@
                                     <p>Temperatura</p>
                                 </div>
 
-                                <div class="umidade">
-                                    <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                    <p>Umidade</p>
-                                </div>
-
                             </div>
 
                             <div class="metricas-baixo">
 
-                                <img src="../assets/img/dashboard/select.png" alt="">
+                                <div class="umidade">
+                                    <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                    <p>Umidade</p>
+                                </div>
 
                             </div>
 
@@ -326,7 +326,7 @@
     new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'],
+            labels: ['6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
                 label: 'Umidade',
                 data: [15, 20, 22, 26, 16, 18, 29, 100],
