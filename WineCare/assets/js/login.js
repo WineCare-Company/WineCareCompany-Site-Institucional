@@ -10,11 +10,6 @@ function login() {
     var senha = inp_senha.value;
 
 
-    // VARIAVEIS
-
-    var loginCorreto = false;
-
-
     // VERIFICAÇÕES
 
     if (email != '' && senha != '') {
@@ -22,8 +17,6 @@ function login() {
         for (var i = tentativas; i > 0; i--) {
 
             if (email == 'Cliente@gmail.com' && senha == 'cliente123') {
-
-                loginCorreto = true;
 
                 window.location.href = 'dash.html';
 
