@@ -10,6 +10,7 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../assets/js/trocaConteudo.js"></script>
+    <script src="../assets/js/atualizarData.js"></script>
     <!-- TITLE -->
     <title>DashBoard</title>
 </head>
@@ -39,51 +40,30 @@
                 </div>
 
 
-                <!-- LISTA DE CONFIGURAÇÕES -->
+                <!-- LISTA DE SEÇÕES -->
 
-                <nav class="configuracoes">
+                <nav class="secoes">
+
+                    
+                    <!-- DASHBOARD - NOTIFICAÇÕES - CONFIGURAÇÕES -->
 
                     <ul>
                         <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
-                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações
-                        </li>
-                        <li id="configuracoes"><img class="icone"
-                                src="../assets/img/dashboard/settings.png">Configuracões</li>
+                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
+                        <li id="configuracoes"><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões</li>
                     </ul>
 
-                </nav>
 
+                    <!-- SAIR DA CONTA -->
 
-                <!-- LISTA DE SALAS -->
+                    <div class="sair">
 
-                <nav class="salas">
+                        <img class="icone-sair" src="../assets/img/dashboard/logout.png">
+                        <p><a href="login.html">Sair da Conta</a></p>
 
-                    <ul>
-                        <li><img class="icone" src="../assets/img/dashboard/comodo-vinho.png">Sala 1</li>
-                        <li><img class="icone" src="../assets/img/dashboard/sala.png">Sala 2</li>
-                    </ul>
+                    </div>
 
                 </nav>
-
-
-                <!-- ATUALIZAR DASHBOARD -->
-
-                <div class="botoes">
-
-                    <button id="btn-atualizar">Atualizar dados</button>
-                    <button id="btn-voltar">Retornar ao Site</button>
-
-                </div>
-
-
-                <!-- SAIR DA CONTA -->
-
-                <div class="sair">
-
-                    <img class="icone-sair" src="../assets/img/dashboard/logout.png">
-                    <p><a href="login.html">Sair da Conta</a></p>
-
-                </div>
 
             </div>
 
@@ -200,7 +180,7 @@
 
                                 <div class="titulo">
 
-                                    <p>Histórico de Temperaturas - (Barril Nº 23)</p>
+                                    <p>Histórico de Temperaturas - (Barril Nº 1)</p>
 
                                 </div>
 
@@ -221,7 +201,7 @@
 
                                 <div class="titulo">
 
-                                    <p>Histórico de Umidade Durante a Semana - (Barril Nº 23)</p>
+                                    <p>Histórico de Umidade Durante a Semana - (Barril Nº 1)</p>
 
                                 </div>
 
@@ -244,7 +224,7 @@
 
                                 <div class="data">
                                     <p>Métricas Atual</p>
-                                    <span>10/04/2024</span>
+                                    <p id="data-atual"></p>
                                 </div>
 
                                 <div class="temperatura">
@@ -274,6 +254,9 @@
 
             </div>
 
+
+            <!-- NOTIFICAÇÕES -->
+
             <div id="notificacoes-content" style="display: none;">
 
                 <div class="notificacoes-container">
@@ -289,6 +272,9 @@
                 </div>
 
             </div>
+
+
+            <!-- CONFIGURAÇÕES -->
 
             <div id="configuracoes-content" style="display: none;">
 

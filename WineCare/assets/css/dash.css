@@ -48,6 +48,9 @@ main {
     width: 20%;
     height: 100%;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
 }
 
 
@@ -55,6 +58,7 @@ main {
 
 .perfil {
     width: 100%;
+    height: 10%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -70,18 +74,21 @@ main {
 }
 
 
-/* CONFIGURAÇÕES */
+/* SEÇÕES */
 
-.configuracoes {
+.secoes {
     width: 100%;
-    margin-top: 30px;
-    padding-left: 10px;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
-/* LISTA DE CONFIGURAÇÕES */
+/* LISTA DE SEÇÕES */
 
-.configuracoes ul {
+.secoes ul {
+    padding-left: 10px;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -89,9 +96,9 @@ main {
 }
 
 
-/* ELEMENTOS DA LISTA DE CONFIGURAÇÕES */
+/* ELEMENTOS DA LISTA DE SEÇÕES */
 
-.configuracoes ul li {
+.secoes ul li {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -99,102 +106,14 @@ main {
     transition: 0.2s;
 }
 
-.configuracoes ul li:hover {
+.secoes ul li:hover {
     transition: 0.2s;
     color: #e1186c;
 }
 
-.configuracoes img {
+.secoes img {
     width: 100%;
     max-width: 30px;
-}
-
-
-/* SALAS */
-
-.salas {
-    width: 100%;
-    margin-top: 100px;
-    padding-left: 10px;
-}
-
-
-/* LISTA DE SALAS */
-
-.salas ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-
-/* ELEMENTOS DA LISTA DE SALAS */
-
-.salas ul li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #e40d60;
-}
-
-
-/* IMAGEM DA LISTA DE SALAS */
-
-.salas img {
-    width: 100%;
-    max-width: 30px;
-}
-
-
-/* DIV DOS BOTOES */
-
-.botoes {
-    width: 100%;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    gap: 5px;
-    /* background-color: #0eda6f; */
-}
-
-
-/* CONFIGURAÇÃO PARA OS BOTÕES */
-
-.botoes button {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 10px;
-    color: white;
-    transition: 0.2s;
-    cursor: pointer;
-
-}
-
-
-/* BOTÃO ATUALIZAR DADOS */
-
-#btn-atualizar {
-    background-color: #c3155e;
-}
-
-#btn-atualizar:hover {
-    transition: 0.2s;
-    background-color: #e1186c;
-}
-
-
-/* BOTÃO VOLTAR */
-
-#btn-voltar {
-    background-color: #1b0a13;
-}
-
-#btn-voltar:hover {
-    transition: 0.2s;
-    background-color: #1b0a13de;
 }
 
 
@@ -202,7 +121,6 @@ main {
 
 .sair {
     width: 100%;
-    margin-top: 50px;
     padding: 20px 10px;
     border-top: 1px solid #e40d60;
     text-decoration: none;
@@ -435,7 +353,7 @@ canvas {
     justify-content: space-between;   
 }
 
-.data span {
+#data-atual {
     color: #e1186c; 
 }
 
