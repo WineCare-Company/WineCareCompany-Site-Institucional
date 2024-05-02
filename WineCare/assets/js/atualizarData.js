@@ -13,16 +13,20 @@ function atualizarData() {
     var ano = dataAtual.getFullYear();
 
 
-    // Atualiza o conteúdo do parágrafo com a data formatada
+    // ATUALIZA A DATA NA DASHBOARD
+
     var data = document.getElementById('data-atual');
     data.textContent = dia + "/" + mes + "/" + ano
 
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Chama a função inicialmente para exibir a data atual
+    
+    // CHAMA A FUNÇÃO PARA EXIBIR A DATA
+    
     atualizarData();
 
-    // Atualiza a data a cada segundo (1000 milissegundos)
+    // ATUALIZA A DATA A CADA SEGUNDO (1000 milissegundos)
+    
     setInterval(atualizarData, 1000);
 });
