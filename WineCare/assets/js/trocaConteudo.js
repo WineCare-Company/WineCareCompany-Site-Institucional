@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", function() {
         // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
         
         document.getElementById("vinicola-content").style.display = "none";
+        document.getElementById("barris-content").style.display = "block";
+        document.getElementById("graficos-content").style.display = "none";
+    });
+
+    document.getElementById("card-barril1").addEventListener("click", function() {
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("vinicola-content").style.display = "none";
+        document.getElementById("barris-content").style.display = "none";
         document.getElementById("graficos-content").style.display = "block";
     });
 
