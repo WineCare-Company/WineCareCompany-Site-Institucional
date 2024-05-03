@@ -15,8 +15,20 @@ function atualizarData() {
 
     // ATUALIZA A DATA NA DASHBOARD
 
-    var data = document.getElementById('data-atual');
-    data.textContent = dia + "/" + mes + "/" + ano
+    var data1 = document.getElementById('data-atual1');
+    data1.textContent = dia + "/" + mes + "/" + ano;
+
+    var data2 = document.getElementById('data-atual2');
+    data2.textContent = dia + "/" + mes + "/" + ano;
+
+    var data3 = document.getElementById('data-atual3');
+    data3.textContent = dia + "/" + mes + "/" + ano;
+
+    var data4 = document.getElementById('data-atual4');
+    data4.textContent = dia + "/" + mes + "/" + ano;
+
+    var data5 = document.getElementById('data-atual5');
+    data5.textContent = dia + "/" + mes + "/" + ano;
 
 }
 
