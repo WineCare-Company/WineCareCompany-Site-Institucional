@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         document.getElementById("dashboard-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+        document.getElementById("barris-content").style.display = "none";
         document.getElementById("vinicola-content").style.display = "block";
         document.getElementById("notificacoes-content").style.display = "none";
         document.getElementById("configuracoes-content").style.display = "none";

@@ -49,8 +49,10 @@
 
                     <ul>
                         <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
-                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
-                        <li id="configuracoes"><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões</li>
+                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações
+                        </li>
+                        <li id="configuracoes"><img class="icone"
+                                src="../assets/img/dashboard/settings.png">Configuracões</li>
                     </ul>
 
 
@@ -115,11 +117,115 @@
                 </div>
 
                 <div id="barris-content" style="display: none;">
-                    
+
                     <div class="barris-container">
 
-                        <div class="barris-titulo">
-                            <h1>Barris</h1>
+                        <!-- TOPO -->
+
+                        <div class="topo">
+
+
+                            <!-- KPIS -->
+
+                            <div class="card">
+
+                                <div class="image">
+
+                                    <img src="../assets/img/dashboard/sensor.png" alt="">
+
+                                </div>
+
+                                <div>
+
+                                    <p class="sensor-quantidade">0/1</p>
+
+                                    <span>Sensores Desconectados</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card">
+
+                                <div class="image">
+
+                                    <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
+
+                                </div>
+
+                                <div>
+
+                                    <div>
+                                        <p class="sensor-quantidade">0</p>
+                                    </div>
+
+                                    <span>Umidade Acima do Adequado</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card">
+
+                                <div class="image">
+
+                                    <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
+
+                                </div>
+
+                                <div>
+
+                                    <div>
+                                        <p class="sensor-quantidade">0</p>
+                                        
+                                    </div>
+
+                                    <span>Umidade Abaixo do Adequado</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card">
+
+                                <div class="image">
+
+                                    <img src="../assets/img/dashboard/gelado.png" alt="">
+
+                                </div>
+
+                                <div>
+
+                                    <div>
+                                        <p class="sensor-quantidade sensor-gelado">0</p>
+                                    </div>
+
+                                    <span>Temperatura Abaixo do Adequado</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card">
+
+                                <div class="image">
+
+                                    <img src="../assets/img/dashboard/quente.png" alt="">
+
+                                </div>
+
+                                <div>
+
+                                    <div>
+                                        <p class="sensor-quantidade sensor-quente">0</p>
+                                    </div>
+
+                                    <span>Temperatura Acima do Elevado</span>
+
+                                </div>
+
+                            </div>
+
                         </div>
 
 
@@ -217,7 +323,7 @@
 
                                     <div>
                                         <p class="sensor-quantidade">0</p>
-                                        
+
                                     </div>
 
                                     <span>Umidade Abaixo do Adequado</span>
