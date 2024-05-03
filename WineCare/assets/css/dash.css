@@ -299,10 +299,16 @@ main {
 
 /* CARD VINICOLAS */
 
-.card-barril {
+#card-agrupamento1, #card-agrupamento2, #card-agrupamento3, #card-agrupamento4, #card-agrupamento5 {
     width: 100%;
     max-width: 250px;
     height: 30%;
+    max-height: 30%;
+    flex: 1fr 1fr;
+}
+
+.card-barril {
+    width: 100%;
     padding: 10px;
     border: 1px solid #cb3a76;
     border-radius: 10px;
@@ -535,7 +541,7 @@ canvas {
     justify-content: space-between;   
 }
 
-#data-atual {
+#data-atual1, #data-atual2, #data-atual3, #data-atual4, #data-atual5 {
     color: #e1186c; 
 }
 
