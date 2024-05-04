@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("vinicola-content").style.display = "none";
         document.getElementById("barris-content").style.display = "none";
         document.getElementById("graficos-content").style.display = "block";
+        
         document.getElementById("dash1").style.display = "block";
         document.getElementById("dash2").style.display = "none";
         document.getElementById("dash3").style.display = "none";
@@ -80,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("vinicola-content").style.display = "none";
         document.getElementById("barris-content").style.display = "none";
         document.getElementById("graficos-content").style.display = "block";
+
         document.getElementById("dash1").style.display = "none";
         document.getElementById("dash2").style.display = "block";
         document.getElementById("dash3").style.display = "none";
@@ -95,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("vinicola-content").style.display = "none";
         document.getElementById("barris-content").style.display = "none";
         document.getElementById("graficos-content").style.display = "block";
+
         document.getElementById("dash1").style.display = "none";
         document.getElementById("dash2").style.display = "none";
         document.getElementById("dash3").style.display = "block";
@@ -110,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("vinicola-content").style.display = "none";
         document.getElementById("barris-content").style.display = "none";
         document.getElementById("graficos-content").style.display = "block";
+        
         document.getElementById("dash1").style.display = "none";
         document.getElementById("dash2").style.display = "none";
         document.getElementById("dash3").style.display = "none";
@@ -125,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("vinicola-content").style.display = "none";
         document.getElementById("barris-content").style.display = "none";
         document.getElementById("graficos-content").style.display = "block";
+
         document.getElementById("dash1").style.display = "none";
         document.getElementById("dash2").style.display = "none";
         document.getElementById("dash3").style.display = "none";
@@ -250,6 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "block";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -264,6 +270,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "block";
@@ -278,8 +285,9 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
-        document.getElementById("card-agrupamento2").style.display = "nonw";
+        document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
         document.getElementById("card-agrupamento4").style.display = "block";
         document.getElementById("card-agrupamento5").style.display = "none";
@@ -292,6 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -326,6 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "block";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -340,6 +350,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "block";
@@ -354,8 +365,9 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
-        document.getElementById("card-agrupamento2").style.display = "nonw";
+        document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
         document.getElementById("card-agrupamento4").style.display = "block";
         document.getElementById("card-agrupamento5").style.display = "none";
@@ -368,6 +380,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -402,6 +415,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "block";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -416,6 +430,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "block";
@@ -430,8 +445,9 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
-        document.getElementById("card-agrupamento2").style.display = "nonw";
+        document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
         document.getElementById("card-agrupamento4").style.display = "block";
         document.getElementById("card-agrupamento5").style.display = "none";
@@ -444,6 +460,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -478,6 +495,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "block";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -492,6 +510,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "block";
@@ -506,8 +525,9 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
-        document.getElementById("card-agrupamento2").style.display = "nonw";
+        document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
         document.getElementById("card-agrupamento4").style.display = "block";
         document.getElementById("card-agrupamento5").style.display = "none";
@@ -520,6 +540,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -554,6 +575,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "block";
         document.getElementById("card-agrupamento3").style.display = "none";
@@ -568,6 +590,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
         document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "block";
@@ -582,8 +605,9 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("barris-content").style.display = "block";
         document.getElementById("graficos-content").style.display = "none";
+
         document.getElementById("card-agrupamento1").style.display = "none";
-        document.getElementById("card-agrupamento2").style.display = "nonw";
+        document.getElementById("card-agrupamento2").style.display = "none";
         document.getElementById("card-agrupamento3").style.display = "none";
         document.getElementById("card-agrupamento4").style.display = "block";
         document.getElementById("card-agrupamento5").style.display = "none";
