@@ -9,97 +9,99 @@
     <link rel="stylesheet" href="../assets/css/dash.css">
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../assets/js/trocaConteudo.js"></script>
+    <!-- ATUALIZAR DATA -->
     <script src="../assets/js/atualizarData.js"></script>
+    <!-- TROCA DE CONTEUDO -->
+    <script src="../assets/js/trocaConteudo.js"></script>
     <!-- TITLE -->
-    <title>DashBoard</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
 
+
+    <!-- CONTAINER PRINCIPAL -->
+
     <main>
 
+        <!-- MENU -->
 
-        <!-- CONTAINER - DASHBOARD -->
-
-        <div class="container">
-
-
-            <!-- MENU LATERAL -->
-
-            <div class="menu">
+        <div class="menu">
 
 
-                <!-- PEFIL -->
+            <!-- PEFIL -->
 
-                <div class="perfil">
+            <div class="perfil">
 
-                    <img src="../assets/img/dashboard/perfil.png">
-                    <h3>Fernanda</h3>
-
-                </div>
-
-
-                <!-- LISTA DE SEÇÕES -->
-
-                <nav class="secoes">
-
-
-                    <!-- DASHBOARD - NOTIFICAÇÕES - CONFIGURAÇÕES -->
-
-                    <ul>
-                        <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
-                        <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações
-                        </li>
-                        <li id="configuracoes"><img class="icone"
-                                src="../assets/img/dashboard/settings.png">Configuracões</li>
-                    </ul>
-
-
-                    <!-- SAIR DA CONTA -->
-
-                    <div class="sair">
-
-                        <img class="icone-sair" src="../assets/img/dashboard/logout.png">
-                        <p><a href="login.html">Sair da Conta</a></p>
-
-                    </div>
-
-                </nav>
+                <img src="../assets/img/dashboard/perfil.png">
+                <h3>Fernanda</h3>
 
             </div>
 
 
-            <!-- DASHBOARD -->
+            <!-- LISTA DE SEÇÕES -->
 
-            <div id="dashboard-content" style="display: block;">
-
-
-                <!-- CONTAINER DA VINICOLA -->
-
-                <div id="vinicola-content" style="display: block;">
-
-                    <div class="vinicola-container">
-
-                        <div class="vinicolas-titulo">
-                            <h1>Vinicolas</h1>
-                        </div>
+            <nav class="secoes">
 
 
-                        <!-- VINICOLAS -->
+                <!-- DASHBOARD - NOTIFICAÇÕES - CONFIGURAÇÕES -->
 
-                        <div class="vinicolas">
+                <ul>
+                    <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
+                    <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
+                    <li id="configuracoes"><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões
+                    </li>
+                </ul>
 
 
-                            <!-- CARD DE VINICOLAS -->
+                <!-- SAIR DA CONTA -->
 
-                            <div id="card-vinicola1" class="card-vinicola">
+                <div class="sair">
 
-                                <h3>Vinicola 1</h3>
+                    <img class="icone-sair" src="../assets/img/dashboard/logout.png">
+                    <p><a href="login.html">Sair da Conta</a></p>
 
-                                <img src="../assets/img/dashboard/vinicola.png" alt="">
+                </div>
 
-                            </div>
+            </nav>
+
+        </div>
+
+
+        <!-- CONTAINER DO LADO DIREITO -->
+
+        <div class="container-direito">
+
+
+            <!-- CONTAINER VINICOLA -->
+
+            <div id="vinicola-container" style="display: block;">
+
+
+                <!-- CONTEUDO VINICOLA -->
+
+                <div class="vinicola-content">
+
+
+                    <!-- TITULO VINICOLA -->
+
+                    <div class="vinicola-titulo">
+                        <h1>Vinicolas</h1>
+                    </div>
+
+
+                    <!-- VINICOLA CARDS -->
+
+                    <div class="vinicola-cards">
+
+
+                        <!-- CARD 1º -->
+
+                        <div id="card-vinicola1" class="card-vinicola">
+
+                            <h3>Vinicola 1</h3>
+
+                            <img src="../assets/img/dashboard/vinicola.png" alt="">
 
                         </div>
 
@@ -107,1187 +109,660 @@
 
                 </div>
 
-
-                <!-- CONTAINER DE BARRIS -->
-
-                <div id="barris-content" style="display: none;">
-
-                    <div class="barris-container">
-
-                        <!-- TOPO -->
-
-                        <div class="topo">
+            </div>
 
 
-                            <!-- KPIS -->
+            <!-- CONTAINER BARRIL -->
 
-                            <div id="card1" class="card">
+            <div id="barril-container" style="display: none;">
 
-                                <div class="image">
 
-                                    <img src="../assets/img/dashboard/sensor.png" alt="">
+                <!-- CONTEUDO BARRIL -->
 
-                                </div>
+                <div class="barril-content">
 
-                                <div>
 
-                                    <p class="sensor-quantidade">1/5</p>
+                    <!-- CONTEUDO KPIS -->
 
-                                    <span>Sensores Desconectados</span>
+                    <div class="KPIS">
 
-                                </div>
+
+                        <!-- KPIS -->
+
+                        <div id="card1" class="card-KPI">
+
+                            <div class="image">
+
+                                <img src="../assets/img/dashboard/sensor.png" alt="">
 
                             </div>
 
-                            <div id="card2" class="card">
+                            <div>
 
-                                <div class="image">
+                                <p class="sensor-quantidade">1/5</p>
 
-                                    <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
-
-                                </div>
-
-                                <div>
-
-                                    <div>
-                                        <p class="sensor-quantidade">1</p>
-                                    </div>
-
-                                    <span>Umidade Acima do Adequado</span>
-
-                                </div>
-
-                            </div>
-
-                            <div id="card3" class="card">
-
-                                <div class="image">
-
-                                    <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
-
-                                </div>
-
-                                <div>
-
-                                    <div>
-                                        <p class="sensor-quantidade">1</p>
-                                        
-                                    </div>
-
-                                    <span>Umidade Abaixo do Adequado</span>
-
-                                </div>
-
-                            </div>
-
-                            <div id="card4" class="card">
-
-                                <div class="image">
-
-                                    <img src="../assets/img/dashboard/gelado.png" alt="">
-
-                                </div>
-
-                                <div>
-
-                                    <div>
-                                        <p class="sensor-quantidade sensor-gelado">1</p>
-                                    </div>
-
-                                    <span>Temperatura Abaixo do Adequado</span>
-
-                                </div>
-
-                            </div>
-
-                            <div id="card5" class="card">
-
-                                <div class="image">
-
-                                    <img src="../assets/img/dashboard/quente.png" alt="">
-
-                                </div>
-
-                                <div>
-
-                                    <div>
-                                        <p class="sensor-quantidade sensor-quente">1</p>
-                                    </div>
-
-                                    <span>Temperatura Acima do Elevado</span>
-
-                                </div>
+                                <span>Sensores Desconectados</span>
 
                             </div>
 
                         </div>
 
+                        <div id="card2" class="card-KPI">
 
-                        <!-- VINICOLAS -->
+                            <div class="image">
 
-                        <div class="barris">
+                                <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <div>
+                                    <p class="sensor-quantidade">1</p>
+                                </div>
+
+                                <span>Umidade Acima do Adequado</span>
+
+                            </div>
+
+                        </div>
+
+                        <div id="card3" class="card-KPI">
+
+                            <div class="image">
+
+                                <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <div>
+                                    <p class="sensor-quantidade">1</p>
+
+                                </div>
+
+                                <span>Umidade Abaixo do Adequado</span>
+
+                            </div>
+
+                        </div>
+
+                        <div id="card4" class="card-KPI">
+
+                            <div class="image">
+
+                                <img src="../assets/img/dashboard/gelado.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <div>
+                                    <p class="sensor-quantidade sensor-gelado">1</p>
+                                </div>
+
+                                <span>Temperatura Abaixo do Adequado</span>
+
+                            </div>
+
+                        </div>
+
+                        <div id="card5" class="card-KPI">
+
+                            <div class="image">
+
+                                <img src="../assets/img/dashboard/quente.png" alt="">
+
+                            </div>
+
+                            <div>
+
+                                <div>
+                                    <p class="sensor-quantidade sensor-quente">1</p>
+                                </div>
+
+                                <span>Temperatura Acima do Elevado</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
 
-                            <!-- CARD DE VINICOLAS -->
+                    <!-- CONTEUDO DOS CARDS BARRIL -->
 
-                            <div id="card-agrupamento1">
-                                <div id="card-barril1" class="card-barril">
+                    <div id="barril-cards-content" style="display: none;">
+
+
+                        <!-- CARD BARRIS -->
+
+                        <div class="barril-cards">
+
+
+                            <!-- CARDS -->
+
+                            <div id="card-barril1">
+
+                                <div class="card-barril">
                                     <h3>Barril 1</h3>
                                     <img src="../assets/img/dashboard/barril.png" alt="">
                                 </div>
+
                             </div>
 
-                            <div id="card-agrupamento2">
-                                <div id="card-barril2" class="card-barril">
+                            <div id="card-barril2">
+
+                                <div class="card-barril">
                                     <h3>Barril 2</h3>
                                     <img src="../assets/img/dashboard/barril.png" alt="">
                                 </div>
+
                             </div>
 
-                            <div id="card-agrupamento3">
-                                <div id="card-barril3" class="card-barril">
+                            <div id="card-barril3">
+
+                                <div class="card-barril">
                                     <h3>Barril 3</h3>
                                     <img src="../assets/img/dashboard/barril.png" alt="">
                                 </div>
+
                             </div>
 
-                            <div id="card-agrupamento4">
-                                <div id="card-barril4" class="card-barril">
+                            <div id="card-barril4">
+
+                                <div class="card-barril">
                                     <h3>Barril 4</h3>
                                     <img src="../assets/img/dashboard/barril.png" alt="">
                                 </div>
+
                             </div>
 
-                            <div id="card-agrupamento5">
-                                <div id="card-barril5" class="card-barril">
+                            <div id="card-barril5">
+
+                                <div class="card-barril">
                                     <h3>Barril 5</h3>
                                     <img src="../assets/img/dashboard/barril.png" alt="">
                                 </div>
-                            </div>
 
+                            </div>
 
 
                         </div>
 
                     </div>
 
-                </div>
 
-                <!-- CONTAINER DOS GRAFICOS -->
+                    <div id="dash-content" style="display: none;">
 
-                <div id="graficos-content" style="display: none;">
+                        <div id="dash1" style="display: none;">
 
-                    <div id="dash1" style="display: none;">
+                            <div class="dash">
 
-                        <div class="dash">
+                                <!-- MEIO -->
 
-
-                            <!-- TOPO -->
-    
-                            <div class="topo">
+                                <div class="meio">
 
 
-                                <!-- KPIS -->
-    
-                                <div id="card1.1" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/sensor.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <p class="sensor-quantidade">1/5</p>
-    
-                                        <span>Sensores Desconectados</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card1.2" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
+                                    <!-- METRICAS DA ESQUERDA - GRAFICOS -->
+
+                                    <div class="metricas-esquerda">
+
+                                        <!-- PRIMEIRO GRÁFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Temperaturas Diária - (Barril Nº 1)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="linha">
+                                                <canvas id="line1"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Acima do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card1.3" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
-                                            
+
+
+                                        <!-- SEGUNDO GRAFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Umidade Diária - (Barril Nº 1)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="barra">
+                                                <canvas id="bar1"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Abaixo do Adequado</span>
-    
+
                                     </div>
-    
-                                </div>
-    
-                                <div id="card1.4" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/gelado.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-gelado">1</p>
+
+
+                                    <!-- METRICAS DA DIREITA -->
+
+                                    <div class="metricas-direita">
+
+                                        <div class="metricas-topo">
+
+                                            <div class="data">
+                                                <p>Métricas Atual</p>
+                                                <p id="data-atual1"></p>
+                                            </div>
+
+                                            <div class="temperatura">
+                                                <img src="../assets/img/dashboard/kpi1.png" alt="">
+                                                <p>Temperatura</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Abaixo do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card1.5" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/quente.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-quente">1</p>
+
+                                        <div class="metricas-baixo">
+
+                                            <div class="umidade">
+                                                <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                                <p>Umidade</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Acima do Elevado</span>
-    
+
                                     </div>
-    
+
+
                                 </div>
-    
+
                             </div>
-    
-    
-                            <!-- MEIO -->
-    
-                            <div class="meio">
-    
-    
-                                <!-- METRICAS DA ESQUERDA - GRAFICOS -->
-    
-                                <div class="metricas-esquerda">
-    
-                                    <!-- PRIMEIRO GRÁFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Temperaturas Diária - (Barril Nº 1)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="linha">
-                                            <canvas id="line1"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-    
-                                    <!-- SEGUNDO GRAFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Umidade Diária - (Barril Nº 1)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="barra">
-                                            <canvas id="bar1"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                                <!-- METRICAS DA DIREITA -->
-    
-                                <div class="metricas-direita">
-    
-                                    <div class="metricas-topo">
-    
-                                        <div class="data">
-                                            <p>Métricas Atual</p>
-                                            <p id="data-atual1"></p>
-                                        </div>
-    
-                                        <div class="temperatura">
-                                            <img src="../assets/img/dashboard/kpi1.png" alt="">
-                                            <p>Temperatura</p>
-                                        </div>
-    
-                                    </div>
-    
-                                    <div class="metricas-baixo">
-    
-                                        <div class="umidade">
-                                            <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                            <p>Umidade</p>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                            </div>
-    
+
                         </div>
 
-                    </div>
+                        <div id="dash2" style="display: none;">
 
-                    <div id="dash2" style="display: none;">
-
-                        <div class="dash">
+                            <div class="dash">
 
 
-                            <!-- TOPO -->
-    
-                            <div class="topo">
+                                <!-- MEIO -->
+
+                                <div class="meio">
 
 
-                                <!-- KPIS -->
-    
-                                <div id="card2.1" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/sensor.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <p class="sensor-quantidade">1/5</p>
-    
-                                        <span>Sensores Desconectados</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card2.2" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
+                                    <!-- METRICAS DA ESQUERDA - GRAFICOS -->
+
+                                    <div class="metricas-esquerda">
+
+                                        <!-- PRIMEIRO GRÁFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Temperaturas Diária - (Barril Nº 2)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="linha">
+                                                <canvas id="line2"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Acima do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card2.3" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
-                                            
+
+
+                                        <!-- SEGUNDO GRAFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Umidade Diária - (Barril Nº 2)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="barra">
+                                                <canvas id="bar2"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Abaixo do Adequado</span>
-    
+
                                     </div>
-    
-                                </div>
-    
-                                <div id="card2.4" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/gelado.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-gelado">1</p>
+
+
+                                    <!-- METRICAS DA DIREITA -->
+
+                                    <div class="metricas-direita">
+
+                                        <div class="metricas-topo">
+
+                                            <div class="data">
+                                                <p>Métricas Atual</p>
+                                                <p id="data-atual2"></p>
+                                            </div>
+
+                                            <div class="temperatura">
+                                                <img src="../assets/img/dashboard/kpi1.png" alt="">
+                                                <p>Temperatura</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Abaixo do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card2.5" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/quente.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-quente">1</p>
+
+                                        <div class="metricas-baixo">
+
+                                            <div class="umidade">
+                                                <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                                <p>Umidade</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Acima do Elevado</span>
-    
+
                                     </div>
-    
+
+
                                 </div>
-    
+
                             </div>
-    
-    
-                            <!-- MEIO -->
-    
-                            <div class="meio">
-    
-    
-                                <!-- METRICAS DA ESQUERDA - GRAFICOS -->
-    
-                                <div class="metricas-esquerda">
-    
-                                    <!-- PRIMEIRO GRÁFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Temperaturas Diária - (Barril Nº 2)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="linha">
-                                            <canvas id="line2"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-    
-                                    <!-- SEGUNDO GRAFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Umidade Diária - (Barril Nº 2)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="barra">
-                                            <canvas id="bar2"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                                <!-- METRICAS DA DIREITA -->
-    
-                                <div class="metricas-direita">
-    
-                                    <div class="metricas-topo">
-    
-                                        <div class="data">
-                                            <p>Métricas Atual</p>
-                                            <p id="data-atual2"></p>
-                                        </div>
-    
-                                        <div class="temperatura">
-                                            <img src="../assets/img/dashboard/kpi1.png" alt="">
-                                            <p>Temperatura</p>
-                                        </div>
-    
-                                    </div>
-    
-                                    <div class="metricas-baixo">
-    
-                                        <div class="umidade">
-                                            <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                            <p>Umidade</p>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                            </div>
-    
+
                         </div>
 
-                    </div>
+                        <div id="dash3" style="display: none;">
 
-                    <div id="dash3" style="display: none;">
-
-                        <div class="dash">
+                            <div class="dash">
 
 
-                            <!-- TOPO -->
-    
-                            <div class="topo">
+                                <!-- MEIO -->
+
+                                <div class="meio">
 
 
-                                <!-- KPIS -->
-    
-                                <div id="card3.1" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/sensor.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <p class="sensor-quantidade">1/5</p>
-    
-                                        <span>Sensores Desconectados</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card3.2" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
+                                    <!-- METRICAS DA ESQUERDA - GRAFICOS -->
+
+                                    <div class="metricas-esquerda">
+
+                                        <!-- PRIMEIRO GRÁFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Temperaturas Diária - (Barril Nº 3)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="linha">
+                                                <canvas id="line3"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Acima do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card3.3" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
-                                            
+
+
+                                        <!-- SEGUNDO GRAFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Umidade Diária - (Barril Nº 1)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="barra">
+                                                <canvas id="bar3"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Abaixo do Adequado</span>
-    
+
                                     </div>
-    
-                                </div>
-    
-                                <div id="card3.4" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/gelado.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-gelado">1</p>
+
+
+                                    <!-- METRICAS DA DIREITA -->
+
+                                    <div class="metricas-direita">
+
+                                        <div class="metricas-topo">
+
+                                            <div class="data">
+                                                <p>Métricas Atual</p>
+                                                <p id="data-atual3"></p>
+                                            </div>
+
+                                            <div class="temperatura">
+                                                <img src="../assets/img/dashboard/kpi1.png" alt="">
+                                                <p>Temperatura</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Abaixo do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card3.5" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/quente.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-quente">1</p>
+
+                                        <div class="metricas-baixo">
+
+                                            <div class="umidade">
+                                                <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                                <p>Umidade</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Acima do Elevado</span>
-    
+
                                     </div>
-    
+
+
                                 </div>
-    
+
                             </div>
-    
-    
-                            <!-- MEIO -->
-    
-                            <div class="meio">
-    
-    
-                                <!-- METRICAS DA ESQUERDA - GRAFICOS -->
-    
-                                <div class="metricas-esquerda">
-    
-                                    <!-- PRIMEIRO GRÁFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Temperaturas Diária - (Barril Nº 3)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="linha">
-                                            <canvas id="line3"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-    
-                                    <!-- SEGUNDO GRAFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Umidade Diária - (Barril Nº 1)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="barra">
-                                            <canvas id="bar3"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                                <!-- METRICAS DA DIREITA -->
-    
-                                <div class="metricas-direita">
-    
-                                    <div class="metricas-topo">
-    
-                                        <div class="data">
-                                            <p>Métricas Atual</p>
-                                            <p id="data-atual3"></p>
-                                        </div>
-    
-                                        <div class="temperatura">
-                                            <img src="../assets/img/dashboard/kpi1.png" alt="">
-                                            <p>Temperatura</p>
-                                        </div>
-    
-                                    </div>
-    
-                                    <div class="metricas-baixo">
-    
-                                        <div class="umidade">
-                                            <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                            <p>Umidade</p>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                            </div>
-    
+
                         </div>
 
-                    </div>
+                        <div id="dash4" style="display: none;">
 
-                    <div id="dash4" style="display: none;">
-
-                        <div class="dash">
+                            <div class="dash">
 
 
-                            <!-- TOPO -->
-    
-                            <div class="topo">
+                                <!-- MEIO -->
+
+                                <div class="meio">
 
 
-                                <!-- KPIS -->
-    
-                                <div id="card4.1" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/sensor.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <p class="sensor-quantidade">1/5</p>
-    
-                                        <span>Sensores Desconectados</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card4.2" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
+                                    <!-- METRICAS DA ESQUERDA - GRAFICOS -->
+
+                                    <div class="metricas-esquerda">
+
+                                        <!-- PRIMEIRO GRÁFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Temperaturas Diária - (Barril Nº 4)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="linha">
+                                                <canvas id="line4"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Acima do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card4.3" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
-                                            
+
+
+                                        <!-- SEGUNDO GRAFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Umidade Diária - (Barril Nº 4)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="barra">
+                                                <canvas id="bar4"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Abaixo do Adequado</span>
-    
+
                                     </div>
-    
-                                </div>
-    
-                                <div id="card4.4" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/gelado.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-gelado">1</p>
+
+
+                                    <!-- METRICAS DA DIREITA -->
+
+                                    <div class="metricas-direita">
+
+                                        <div class="metricas-topo">
+
+                                            <div class="data">
+                                                <p>Métricas Atual</p>
+                                                <p id="data-atual4"></p>
+                                            </div>
+
+                                            <div class="temperatura">
+                                                <img src="../assets/img/dashboard/kpi1.png" alt="">
+                                                <p>Temperatura</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Abaixo do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card4.5" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/quente.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-quente">1</p>
+
+                                        <div class="metricas-baixo">
+
+                                            <div class="umidade">
+                                                <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                                <p>Umidade</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Acima do Elevado</span>
-    
+
                                     </div>
-    
+
+
                                 </div>
-    
+
                             </div>
-    
-    
-                            <!-- MEIO -->
-    
-                            <div class="meio">
-    
-    
-                                <!-- METRICAS DA ESQUERDA - GRAFICOS -->
-    
-                                <div class="metricas-esquerda">
-    
-                                    <!-- PRIMEIRO GRÁFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Temperaturas Diária - (Barril Nº 4)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="linha">
-                                            <canvas id="line4"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-    
-                                    <!-- SEGUNDO GRAFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Umidade Diária - (Barril Nº 4)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="barra">
-                                            <canvas id="bar4"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                                <!-- METRICAS DA DIREITA -->
-    
-                                <div class="metricas-direita">
-    
-                                    <div class="metricas-topo">
-    
-                                        <div class="data">
-                                            <p>Métricas Atual</p>
-                                            <p id="data-atual4"></p>
-                                        </div>
-    
-                                        <div class="temperatura">
-                                            <img src="../assets/img/dashboard/kpi1.png" alt="">
-                                            <p>Temperatura</p>
-                                        </div>
-    
-                                    </div>
-    
-                                    <div class="metricas-baixo">
-    
-                                        <div class="umidade">
-                                            <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                            <p>Umidade</p>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                            </div>
-    
+
                         </div>
 
-                    </div>
+                        <div id="dash5" style="display: none;">
 
-                    <div id="dash5" style="display: none;">
-
-                        <div class="dash">
+                            <div class="dash">
 
 
-                            <!-- TOPO -->
-    
-                            <div class="topo">
+                                <!-- MEIO -->
+
+                                <div class="meio">
 
 
-                                <!-- KPIS -->
-    
-                                <div id="card5.1" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/sensor.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <p class="sensor-quantidade">1/5</p>
-    
-                                        <span>Sensores Desconectados</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card5.2" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
+                                    <!-- METRICAS DA ESQUERDA - GRAFICOS -->
+
+                                    <div class="metricas-esquerda">
+
+                                        <!-- PRIMEIRO GRÁFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Temperaturas Diária - (Barril Nº 5)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="linha">
+                                                <canvas id="line5"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Acima do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card5.3" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade">1</p>
-                                            
+
+
+                                        <!-- SEGUNDO GRAFICO -->
+
+                                        <div class="grafico">
+
+                                            <!-- TITULO DO GRAFICO -->
+
+                                            <div class="titulo">
+
+                                                <p>Histórico de Umidade Diária - (Barril Nº 5)</p>
+
+                                            </div>
+
+                                            <!-- GRAFICO -->
+
+                                            <div class="barra">
+                                                <canvas id="bar5"></canvas>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Umidade Abaixo do Adequado</span>
-    
+
                                     </div>
-    
-                                </div>
-    
-                                <div id="card5.4" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/gelado.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-gelado">1</p>
+
+
+                                    <!-- METRICAS DA DIREITA -->
+
+                                    <div class="metricas-direita">
+
+                                        <div class="metricas-topo">
+
+                                            <div class="data">
+                                                <p>Métricas Atual</p>
+                                                <p id="data-atual5"></p>
+                                            </div>
+
+                                            <div class="temperatura">
+                                                <img src="../assets/img/dashboard/kpi1.png" alt="">
+                                                <p>Temperatura</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Abaixo do Adequado</span>
-    
-                                    </div>
-    
-                                </div>
-    
-                                <div id="card5.5" class="card">
-    
-                                    <div class="image">
-    
-                                        <img src="../assets/img/dashboard/quente.png" alt="">
-    
-                                    </div>
-    
-                                    <div>
-    
-                                        <div>
-                                            <p class="sensor-quantidade sensor-quente">1</p>
+
+                                        <div class="metricas-baixo">
+
+                                            <div class="umidade">
+                                                <img src="../assets/img/dashboard/kpi2.png" alt="">
+                                                <p>Umidade</p>
+                                            </div>
+
                                         </div>
-    
-                                        <span>Temperatura Acima do Elevado</span>
-    
+
                                     </div>
-    
+
+
                                 </div>
-    
+
                             </div>
-    
-    
-                            <!-- MEIO -->
-    
-                            <div class="meio">
-    
-    
-                                <!-- METRICAS DA ESQUERDA - GRAFICOS -->
-    
-                                <div class="metricas-esquerda">
-    
-                                    <!-- PRIMEIRO GRÁFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Temperaturas Diária - (Barril Nº 5)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="linha">
-                                            <canvas id="line5"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-    
-                                    <!-- SEGUNDO GRAFICO -->
-    
-                                    <div class="grafico">
-    
-                                        <!-- TITULO DO GRAFICO -->
-    
-                                        <div class="titulo">
-    
-                                            <p>Histórico de Umidade Diária - (Barril Nº 5)</p>
-    
-                                        </div>
-    
-                                        <!-- GRAFICO -->
-    
-                                        <div class="barra">
-                                            <canvas id="bar5"></canvas>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                                <!-- METRICAS DA DIREITA -->
-    
-                                <div class="metricas-direita">
-    
-                                    <div class="metricas-topo">
-    
-                                        <div class="data">
-                                            <p>Métricas Atual</p>
-                                            <p id="data-atual5"></p>
-                                        </div>
-    
-                                        <div class="temperatura">
-                                            <img src="../assets/img/dashboard/kpi1.png" alt="">
-                                            <p>Temperatura</p>
-                                        </div>
-    
-                                    </div>
-    
-                                    <div class="metricas-baixo">
-    
-                                        <div class="umidade">
-                                            <img src="../assets/img/dashboard/kpi2.png" alt="">
-                                            <p>Umidade</p>
-                                        </div>
-    
-                                    </div>
-    
-                                </div>
-    
-    
-                            </div>
-    
+
                         </div>
 
                     </div>
@@ -1295,7 +770,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- NOTIFICAÇÕES -->
@@ -1342,7 +816,6 @@
 </body>
 
 </html>
-
 
 <script>
     const linha1 = document.getElementById('line1');
@@ -1551,5 +1024,5 @@
             }
         },
     });
-    
+
 </script>
