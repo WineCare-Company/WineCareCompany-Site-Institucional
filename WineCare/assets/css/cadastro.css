@@ -8,7 +8,7 @@
 body {
     box-sizing: border-box;
     font-family: 'Poppins';
-    background-color: #98abd5;
+    background: linear-gradient(to bottom, #41595f, #92b5bd);
 }
 
 
