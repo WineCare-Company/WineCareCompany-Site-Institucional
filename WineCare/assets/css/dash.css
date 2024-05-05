@@ -56,7 +56,7 @@ main {
 
 .perfil img {
     width: 100%;
-    max-width: 50px;
+    max-width: 60px;
 }
 
 
@@ -99,7 +99,7 @@ main {
 
 .secoes img {
     width: 100%;
-    max-width: 30px;
+    max-width: 40px;
 }
 
 
@@ -120,7 +120,7 @@ main {
 
 .sair img {
     width: 100%;
-    max-width: 30px;
+    max-width: 40px;
 }
 
 .sair a {
@@ -197,6 +197,8 @@ main {
 }
 
 
+
+
 /* CARDS */
 
 .card-vinicola {
@@ -213,6 +215,11 @@ main {
     gap: 10px;
 
     cursor: pointer;   
+}
+
+.card-vinicola:hover {
+    transition: 0.2s;
+    background-color: #e1186c24;
 }
 
 
@@ -295,7 +302,7 @@ main {
 
 .image img {
     width: 100%;
-    max-width: 40px;
+    max-width: 50px;
 }
 
 
@@ -321,6 +328,14 @@ main {
 
 .card-KPI .sensor-quantidade {
     font-size: 1.7rem;
+}
+
+.card-KPI .sensor-pouco-umido {
+    color: #a5cd4f;
+}
+
+.card-KPI .sensor-umido {
+    color: #9d3cfa;
 }
 
 .card-KPI .sensor-gelado {
@@ -368,7 +383,7 @@ main {
 /* CARD BARRIL */
 
 #card-barril1, #card-barril2, #card-barril3, #card-barril4, #card-barril5 {
-    width: 250px;
+    width: 120px;
     max-width: 250px; 
     height: 100%;
     max-height: 25%;
@@ -386,6 +401,11 @@ main {
     gap: 10px;
 
     cursor: pointer;  
+}
+
+.card-barril:hover {
+    transition: 0.2s;
+    background-color: #e1186c24;
 }
 
 
