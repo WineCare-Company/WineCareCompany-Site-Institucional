@@ -207,7 +207,7 @@ main {
     height: 30%;
     padding: 10px;
     border: 1px solid #cb3a76;
-    border-radius: 10px;
+    border-radius: 12px;
     flex: 1fr 1fr;
     display: flex;
     flex-direction: column;
@@ -274,7 +274,7 @@ main {
     width: 20%;
     height: 100%;
     border: 1px solid #e40d60;
-    border-radius: 10px;
+    border-radius: 24px;
     display: flex;
     flex-direction: row;
     cursor: pointer;
@@ -323,7 +323,7 @@ main {
 /* PARAGRAFO */
 
 .card-KPI div p {
-    color: rgb(237, 36, 36);
+    color: #e40d60;
 }
 
 .card-KPI .sensor-quantidade {
@@ -394,7 +394,7 @@ main {
     height: 100%;
     padding: 10px;
     border: 1px solid #cb3a76;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
