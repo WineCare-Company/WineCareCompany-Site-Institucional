@@ -8,3 +8,7 @@ function telaCadastro() {
 function telaLogin() {
     window.location.href = 'Login.html';
 }
+
+function sobre() {
+    window.location.href = '#sobre';
+}
