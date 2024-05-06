@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+}
+
+
+/* -------------------- HEADER -------------------- */
+
+header {
+    color: white;
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(26, 10, 18);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header div {
+    width: 20%;
+    padding: 20px 0;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header div img {
+    width: 100%;
+    max-width: 45px;
+}
+
+header nav {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+header nav ul {
+    height: 100%;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+header a:hover {
+    font-size: 1.1rem;
+    transition: .2s;
+}
+
+
+/* -------------------- FIM HEADER -------------------- */
+
+
+/* -------------------- HOME -------------------- */
+
+#home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    background-color: rgba(27, 10, 19, 0.967);
+
+}
+
+#home aside {
+    width: 50%;
+    height: 100%;
+    padding: 0 100px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+#home aside h1 {
+    font-size: 3rem;
+}
+
+#home aside p {
+    width: 310px;
+    font-size: 1.5rem;
+}
+
+#home aside button {
+    width: 50%;
+    padding: 10px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: white;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+#home aside button:hover {
+    color: white;
+    background-color: rgb(26, 10, 18);
+
+    transition: .2s;
+}
+
+#home article {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: azure;
+}
+
+#home article img {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* -------------------- FIM HOME -------------------- */
+
+
+/* -------------------- SOBRE -------------------- */
+
+#sobre {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: azure;
+}
+
+#sobre article {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sobre article img {
+    width: 100%;
+    max-width: 500px;
+}
+
+#sobre aside {
+    width: 60%;
+    height: 100%;
+    padding: 0 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#sobre aside h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: rgb(26, 10, 18);
+}
+
+#sobre aside p {
+    width: 400px;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+/* -------------------- FIM SOBRE -------------------- */
+
+
+/* -------------------- SERVIÇOS -------------------- */
+
+#servicos {
+    width: 100%;
+    height: 100vh;
+    gap: 50px;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#servicos h2 {
+    font-size: 3rem;
+    color: rgb(26, 10, 18);
+}
+
+#servicos .cards {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+#servicos .card {
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+    border-radius: 24px;
+    background-color: rgb(34, 18, 26);
+    color: white;
+}
+
+#servicos .card .image1 {
+    width: 100%;
+    height: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    background-image: url(../img/home/DashboardDark.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+#servicos .card .image2 {
+    width: 100%;
+    height: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    background-image: url(../img/home/barrilSensor.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+#servicos .card .image3 {
+    width: 100%;
+    height: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    background-image: url(../img/home/DashboardExemplo.jpg);
+    background-size: contain;
+    background-position: center;
+    color: white;
+}
+
+#servicos .card .details {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#servicos .card .details p {
+    width: 100%;
+    text-align: justify;
+}
+
+/* -------------------- FIM SERVIÇOS -------------------- */
+
+
+/* -------------------- PLANOS -------------------- */
+
+#planos {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(27, 10, 19, 0.967);
+}
+
+#planos article {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#planos article img {
+    width: 500px;
+    border-radius: 24px;
+}
+
+#planos aside {
+    width: 60%;
+    height: 100%;
+    padding: 0 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+}
+
+#planos aside .planos-titulo {
+    margin-bottom: 50px;
+}
+
+#planos aside h2 {
+    font-size: 3rem;
+}
+
+#planos aside span {
+    color: rgb(248, 106, 163)   ;
+}
+
+.planos-text {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#planos aside p {
+    width: 400px;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+/* -------------------- FIM PLANOS -------------------- */
+
+
+/* -------------------- DIAGRAMA -------------------- */
+
+#diagrama {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: aqua;
+}
+
+#diagrama aside {
+    width: 40%;
+    height: 100%;
+    padding: 100px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: start;
+    background-color: azure;
+}
+
+#diagrama aside h2 {
+    font-size: 3rem;
+    color: rgb(26, 10, 18);
+}
+
+#diagrama aside p {
+    font-size: 1.5rem;
+}
+
+#diagrama article {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 18, 26);
+}
+
+#diagrama article img {
+    width: 800px;
+    border-radius: 24px;
+}
+
+/* -------------------- FIM DIAGRAMA -------------------- */
+
+
+/* -------------------- FOOTER -------------------- */
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(34, 18, 26);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+footer div {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+}
+
+footer a:hover {
+    transition: 0.2s;
+    font-size: 1.1rem;
+}
+
+footer img {
+    width: 100%;
+    max-width: 50px;
+}
+
+/* -------------------- FIM FOOTER -------------------- */

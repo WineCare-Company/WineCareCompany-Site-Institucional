@@ -5,148 +5,128 @@
     <!-- METADATAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/home/icone.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <!-- TITLE -->
     <title>WineCare</title>
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- HEADER -->
 
+    <header id="header">
 
-        <!-- HEADER -->
+        <div>
+            <img id="icone" src="../assets/img/home/logo-white.png" alt="">
+            <h2>WineCare</h2>
+        </div>
 
-        <header>
+        <nav>
 
-            <div>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#diagrama">Diagrama</a></li>
+                <li>|</li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
 
-                <img id="icone" src="../assets/img/home/icone.png" alt="">
+        </nav>
 
-                <a href="login.html">
-                    <img src="../assets/img/home/user.png" alt="">
-                </a>
+    </header>
 
-            </div>
+    <!-- HOME -->
 
-            <nav>
-
-                <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#planos">Planos</a></li>
-                    <li><a href="#diagrama">Diagrama</a></li>
-                    <li><a href="#footer">Contato</a></li>
-                </ul>
-
-            </nav>
-
-        </header>
-
-
-        <!-- MAIN -->
-
-
-
-        <!-- HOME -->
-
-        <section id="home">
-
-            <div>
-
-                <img src="../assets/img/home/icone.png" alt="">
-                <h1>WineCare</h1>
-
-            </div>
-
-            <p>Monitoramento de Barris de Vinho.</p>
-            <a href="cadastro.html">
-                <button>Seja nosso cliente</button>
-            </a>
-            
-
-        </section>
-
-
-
-    </div>
-
-    <section id="sobre">
+    <section id="home">
 
         <aside>
+            <h1>WineCare</h1>
+            <p>É um projeto de monitoramento para Barris de Vinhos de alto padrão.</p>
 
-            <div class="titulo-diferente">
-                <h2>Sobre</h2>
-            </div>
-
-            <p>
-                Sabemos a importância da refrigeração e armazenamento de vinhos para que os mesmos cheguem em excelentes
-                condições para consumo.
-            </p>
-
-            <p>
-                Por isso, a WineCare é um Sistema
-                que busca fornecer uma solução tecnológica para grandes vinícolas brasileiras para que tenham melhor controle
-                da
-                temperatura dos barris de vinho.
-            </p>
-
+            <button>Conhecer Projeto</button>
         </aside>
 
         <article>
-
-            <img src="../assets/img/home/Mask group.png" alt="">
-
+            <img src="../assets/img/home/wine-glass-4764610_1280-removebg-preview.png">
         </article>
 
     </section>
 
+    <!-- SOBRE -->
 
-    <!-- SERVIÇOS -->
+    <section id="sobre">
+
+        <article>
+            <img src="../assets/img/home/DALL·E-2024-05-06-14.42-Photoroom.png-Photoroom.png">
+        </article>
+
+        <aside>
+            <h2>Sobre</h2>
+
+            <p>Sabemos a importância da refrigeração e armazenamento de vinhos para que os mesmos cheguem em excelentes
+                condições para consumo.
+                Por isso, a WineCare é um Sistema que busca fornecer uma solução tecnológica para grandes vinícolas
+                brasileiras para que tenham melhor controle da temperatura dos barris de vinho.
+            </p>
+        </aside>
+
+    </section>
+
+    <!-- SERVICOS -->
 
     <section id="servicos">
 
         <h2>Serviços</h2>
 
-        <div class="content">
+        <div class="cards">
 
             <div class="card">
 
-                <div class="sistemaWeb">
+                <div class="image1">
                     <h3>Sistema Web</h3>
                 </div>
 
-                <p>Sistema Web totalmente responsivo e acessível, utilizado para Gerenciar seus Barris.</p>
+                <div class="details">
 
-            </div>
-
-            <div class="card black">
-
-                <div class="sensores">
-                    <h3>Sensores</h3>
+                    <p>Sistema Web totalmente responsivo e acessívelutilizado para Gerenciar seus Barris.</p>
                 </div>
-
-                <p>Sensores para captação de dados de temperatura e umidade.</p>
 
             </div>
 
             <div class="card">
 
-                <div class="controleDados">
+                <div class="image2">
+                    <h3>Sensores</h3>
+                </div>
+
+                <div class="details">
+
+                    <p>Sensores para captação de dados de temperatura e umidade.</p>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="image3">
                     <h3>Controle de Dados</h3>
                 </div>
 
-                <p>Dashboard para visualizar os dados coletados pelos Sensores.</p>
+                <div class="details">
+
+                    <p>Dashboard para visualizar os dados coletados pelos Sensores.</p>
+                </div>
 
             </div>
+
 
         </div>
 
     </section>
-
 
     <!-- PLANOS -->
 
@@ -157,48 +137,45 @@
         </article>
 
         <aside>
-
-            <div class="titulo-diferente">
+            <div class="planos-titulo">
                 <h2>Planos</h2>
-                <p>Onde queremos chegar?</p>
+                <span>Onde queremos chegar?</span>
             </div>
 
-            <p>
-                 A nossa missão é auxiliar os produtores a reduzir em até 50% as perdas de vinhos nobres durante o processo de maturação.
-            </p>
-            <p>
-                Com nossa aplicação web, nossos clientes podem monitorar em tempo real a temperatura e a umidade dos vinhos armazenados, acessando facilmente os dados capturados por nossos sensores.
-            </p>
-            <p>
-                Fornecemos alertas que permitem aos produtores agir prontamente, mantendo a qualidade
-                do vinho.
-            </p>
+            <div class="planos-text">
+                <p>A nossa missão é auxiliar os produtores a reduzir em até 50% as perdas de vinhos nobres durante o
+                    processo de maturação.</p>
+
+                <p>Com nossa aplicação web, nossos clientes podem monitorar em tempo real a temperatura e a umidade dos
+                    vinhos armazenados, acessando facilmente os dados capturados por nossos sensores.</p>
+
+                <p>Fornecemos alertas que permitem aos produtores agir prontamente, mantendo a qualidade do vinho.</p>
+            </div>
         </aside>
 
     </section>
+
+    <!-- DIAGRAMA -->
 
     <section id="diagrama">
 
         <aside>
 
-            <div>
-                <h2>Diagrama de Negócios</h2>
-            </div>
+            <h2>Diagrama De Negócios</h2>
+
+            <p>Diagrama explicativo, com o intuito de transmitir a idéia do nosso Projeto.</p>
 
         </aside>
 
         <article>
-
             <img src="../assets/img/home/diagrama-negocio.png" alt="">
-
         </article>
 
     </section>
 
-
     <!-- FOOTER -->
 
-    <footer id="footer">
+    <footer>
 
         <div>
 
@@ -209,7 +186,7 @@
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#planos">Planos</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#diagrama">Diagrama</a></li>
             </ul>
 
         </div>
@@ -226,13 +203,12 @@
 
         <div>
 
-            <img src="../assets/img/home/icone.png" alt="">
+            <img src="../assets/img/home/logo-white.png" alt="">
             <h3>WineCare</h3>
 
         </div>
 
     </footer>
-
 
 </body>
 
