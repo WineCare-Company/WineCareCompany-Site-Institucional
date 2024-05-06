@@ -395,7 +395,8 @@ header a:hover {
 }
 
 #diagrama article img {
-    width: 800px;
+    width: 100%;
+    max-width: 90%;
     border-radius: 24px;
 }
 
