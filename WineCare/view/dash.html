@@ -835,8 +835,24 @@
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
-                label: 'Temperatura',
-                data: [15, 20, 22, 26, 16, 18, 29, 15, 20, 12, 0, 0, 0],
+                label: 'Temperatura atual', 
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 18],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Max.', 
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Min', 
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Min.', 
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Max.', 
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
             }]
         },
@@ -850,12 +866,28 @@
     });
 
     new Chart(barra1, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
                 label: 'Umidade',
-                data: [15, 20, 22, 26, 0, 0, 0, 100],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67, 68],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Max.', 
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Min.', 
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Min.', 
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Max.', 
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
             }]
         },
@@ -874,8 +906,24 @@
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
-                label: 'Temperatura',
-                data: [15, 20, 22, 26, 16, 18, 29, 15, 20, 12, 19, 20, 22],
+                label: 'Temperatura atual', 
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 18],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Max.', 
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Min', 
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Min.', 
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Max.', 
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
             }]
         },
@@ -889,12 +937,28 @@
     });
 
     new Chart(barra2, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
                 label: 'Umidade',
-                data: [15, 20, 22, 26, 16, 18, 29, 100],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67, 68],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Max.', 
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Min.', 
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Min.', 
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Max.', 
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
             }]
         },
@@ -913,8 +977,24 @@
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
-                label: 'Temperatura',
-                data: [15, 20, 22, 26, 16, 18, 29, 15, 20, 12, 19, 20, 22],
+                label: 'Temperatura atual', 
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 18],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Max.', 
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Min', 
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Min.', 
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Max.', 
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
             }]
         },
@@ -928,12 +1008,28 @@
     });
 
     new Chart(barra3, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
                 label: 'Umidade',
-                data: [15, 20, 22, 26, 16, 18, 29, 100],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67, 68],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Max.', 
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Min.', 
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Min.', 
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Max.', 
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
             }]
         },
@@ -952,8 +1048,24 @@
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
-                label: 'Temperatura',
-                data: [15, 20, 22, 26, 16, 18, 29, 15, 20, 12, 19, 20, 22],
+                label: 'Temperatura atual', 
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 18],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Max.', 
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Min', 
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Min.', 
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Max.', 
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
             }]
         },
@@ -967,12 +1079,28 @@
     });
 
     new Chart(barra4, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
                 label: 'Umidade',
-                data: [15, 20, 22, 26, 16, 18, 29, 100],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67, 68],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Max.', 
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Min.', 
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Min.', 
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Max.', 
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
             }]
         },
@@ -991,8 +1119,24 @@
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
-                label: 'Temperatura',
-                data: [15, 20, 22, 26, 16, 18, 29, 15, 20, 12, 19, 20, 22],
+                label: 'Temperatura atual', 
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 18],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Max.', 
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                borderWidth: 2,
+            }, {
+                label: 'Temperatura Min', 
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Min.', 
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso temperatura Max.', 
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
             }]
         },
@@ -1006,12 +1150,28 @@
     });
 
     new Chart(barra5, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
             datasets: [{
                 label: 'Umidade',
-                data: [15, 20, 22, 26, 16, 18, 29, 100],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67, 68],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Max.', 
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                borderWidth: 2,
+            }, {
+                label: 'Umidade Min.', 
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Min.', 
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                borderWidth: 2,
+            }, {
+                label: 'Aviso umidade Max.', 
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
             }]
         },
