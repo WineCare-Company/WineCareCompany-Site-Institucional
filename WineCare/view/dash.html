@@ -833,27 +833,43 @@
     new Chart(linha1, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Temperatura atual', 
-                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 borderWidth: 2,
-            }, {
+                tension: 0.5,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
+            }, {    
                 label: 'Temperatura Max.', 
-                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
+                tension: 0.5,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Temperatura Min', 
-                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
+                tension: 0.5,
+                backgroundColor: 'red',
+        borderColor: 'red',
+                
             }, {
                 label: 'Aviso temperatura Min.', 
-                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
+                tension: 0.5,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso temperatura Max.', 
-                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
+                tension: 0.5,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -870,27 +886,42 @@
     new Chart(barra1, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Umidade',
-                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Umidade Max.', 
-                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Umidade Min.', 
-                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso umidade Min.', 
-                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso umidade Max.', 
-                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -908,27 +939,42 @@
     new Chart(linha2, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Temperatura atual', 
-                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 18],
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
+                tension: 0.1,
+                 backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Temperatura Max.', 
-                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Temperatura Min', 
-                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso temperatura Min.', 
-                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso temperatura Max.', 
-                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -945,27 +991,42 @@
     new Chart(barra2, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Umidade',
-                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 70, 82],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 70],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Umidade Max.', 
-                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Umidade Min.', 
-                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso umidade Min.', 
-                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso umidade Max.', 
-                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -983,27 +1044,42 @@
     new Chart(linha3, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Temperatura atual', 
-                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 18],
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Temperatura Max.', 
-                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Temperatura Min', 
-                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso temperatura Min.', 
-                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso temperatura Max.', 
-                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -1020,27 +1096,42 @@
     new Chart(barra3, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Umidade',
-                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 63, 58],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 63],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Umidade Max.', 
-                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Umidade Min.', 
-                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso umidade Min.', 
-                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso umidade Max.', 
-                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -1058,27 +1149,42 @@
     new Chart(linha4, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Temperatura atual', 
-                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 16, 15, 14],
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 16, 15],
                 borderWidth: 2,
+                tension: 0.1,
+                 backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Temperatura Max.', 
-                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Temperatura Min', 
-                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso temperatura Min.', 
-                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso temperatura Max.', 
-                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -1097,27 +1203,42 @@
     new Chart(barra4, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Umidade',
-                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67, 68],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Umidade Max.', 
-                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Umidade Min.', 
-                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso umidade Min.', 
-                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso umidade Max.', 
-                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -1135,27 +1256,42 @@
     new Chart(linha5, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Temperatura atual', 
-                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19, 21],
+                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Temperatura Max.', 
-                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Temperatura Min', 
-                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso temperatura Min.', 
-                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso temperatura Max.', 
-                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
+                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
+                tension: 0.1,
+                 backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
@@ -1172,27 +1308,42 @@
     new Chart(barra5, {
         type: 'line',
         data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h', 'Atual'],
+            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
                 label: 'Umidade',
-                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67, 68],
+                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'blue',
+        borderColor: 'blue',
             }, {
                 label: 'Umidade Max.', 
-                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Umidade Min.', 
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'red',
+        borderColor: 'red',
             }, {
                 label: 'Aviso umidade Min.', 
-                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
+                tension: 0.1,
+                backgroundColor: 'orange',
+        borderColor: 'orange',
             }, {
                 label: 'Aviso umidade Max.', 
-                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
+                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
+                tension: 0.1,
+                 backgroundColor: 'orange',
+        borderColor: 'orange',
             }]
         },
         options: {
