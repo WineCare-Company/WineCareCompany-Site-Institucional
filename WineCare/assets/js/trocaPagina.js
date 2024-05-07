@@ -6,9 +6,13 @@ function telaCadastro() {
 }
 
 function telaLogin() {
-    window.location.href = 'Login.html';
+    window.location.href = 'login.html';
 }
 
 function sobre() {
     window.location.href = '#sobre';
+}
+
+function home() {
+    window.location.href = 'index.html'
 }
