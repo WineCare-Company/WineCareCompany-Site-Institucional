@@ -41,11 +41,6 @@
                     </div>
 
                     <div>
-                        <p>Informe quantos litros cada barril pode produzir por mês</p>
-                        <input type="number" id="input_litros">
-                    </div>
-
-                    <div>
                         <p>Informe a quantidade garrafas de vinhos vendidas por mês</p>
                         <input type="number" id="input_qtd">
                     </div>
@@ -67,8 +62,9 @@
             </div>
 
         </div>
-
+        
     </main>
+    <div class="rodape">Fonte: Entrevista com Fernando Fisher dono de vinicula.</div>
 
 </body>
 
@@ -80,34 +76,31 @@
         
         var valor = Number(input_valor.value);
         var barris = Number(input_barris.value);
-        var litros = Number(input_litros.value);
+       
         var qtdVenda = Number(input_qtd.value);
 
 
         var valorMensal = valor * qtdVenda; // Valor média que a pessoa vende por mês 
         var ganhoMensal = valorMensal * 0.85; // Informando o valor mensal desperdiçado
-        var litrosMes = barris * litros; // Quanto produz por mês em litros
-        var litrosVendidos = litrosMes * 0.85; // Quantidade de litros de vinhos desperdiçados na produção
-
+     
+var ganhoMensalFormatado = ganhoMensal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
         var ganhosPosWine = valorMensal * 0.925;
-        var litrosPosWine = litrosMes * 0.925;
+      var ganhosPosWineFormatado = ganhosPosWine.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 
-        if (valor <= 0 || barris <= 0 || litros <= 0 || qtdVenda <= 0) { //Para se algum valor inserido pelo usuario for igual a zero aparecer um alerta informando que os dados são invalidos
+        if (valor <= 0 || barris <= 0 || qtdVenda <= 0) { //Para se algum valor inserido pelo usuario for igual a zero aparecer um alerta informando que os dados são invalidos
             alert("Valores inseridos são invalidos tente novamente");
         } else {
             if (ganhoMensal > 0) {
                 output.innerHTML = `<div class="divResposta"><p>Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:</p>  <br><br>
         
         <p>
-            Ganho atual de vinhos: Atualmente você lucra <span class='roxo'> R$${ganhoMensal.toFixed(2)} </span> com sua vínicola mas com a implementação de nossos sensores este valor subiria para <span class='verde'> R$${ganhosPosWine} </span>. <br> <br>
-            Estes valores equivalem aos litros que você produz por mês, sendo <span class= "negrito"> ${litrosMes.toFixed(2)}L </span>, mas sendo vendidos somente <span class= "litrosvendidos"> ${litrosVendidos.toFixed(2)}L </span> mas com nossa empresa este valor aumentará para <span class='verde'> ${litrosPosWine.toFixed(2)}L. </span>
+            Ganho atual de vinhos: Atualmente você lucra <span class='roxo'> ${ganhoMensalFormatado} </span> com sua vínicola mas com a implementação de nossos sensores este valor subiria para <span class='verde'> ${ganhosPosWineFormatado} </span>. <br> <br>
+            
         </p> </div>`;
             } else if (ganhoMensal < 0) {
                 output.innerHTML = `<div class="divResposta"><p>
                     Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:  <br><br>
-                            
-                            Desperdicio atual de vinhos: Atualmente você perde <span class='vermelho'> R$${ganhoMensal} </span> com a implementação de nossos sensores este valor subiria para <span class='verde'> R$${ganhosPosWine} </span>. <br> <br>
-                            Estes valores equivalem aos litros que você produz por mês, sendo <span class = "negrito"> ${litrosMes}L </span>, mas sendo vendidos somente <span class='litrosvendidos'>${litrosVendidos}</span>L mas com nossa empresa este valor aumentará para ${litrosPosWine}L.
+                 
                 </p> </div>`;
             }
 

@@ -157,3 +157,8 @@ button {
     display: flex;
     justify-content: center;
 }
+.rodape{
+    font-size: medium;
+    color: white;
+    margin-left: 62%;
+}
