@@ -282,9 +282,18 @@ main {
     transition: 0.2s;
 }
 
+.card-KPI span {
+    transition: 0.2s;
+}
+
 .card-KPI:hover {
     transition: 0.2s;
     background-color: #210b1424;
+
+    & span {
+        transition: 0.2s;
+        font-size: 0.8rem;
+    }
 }
 
 
