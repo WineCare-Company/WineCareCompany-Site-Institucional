@@ -16,7 +16,7 @@ function login() {
 
         for (var i = tentativas; i > 0; i--) {
 
-            if (email == 'fernanda@gmail.com' && senha == 'fernanda123') {
+            if (email == 'fernanda@gmail.com' && senha == '123') {
 
                 window.location.href = 'dash.html';
 
