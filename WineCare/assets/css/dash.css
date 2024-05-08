@@ -93,6 +93,7 @@ main {
 }
 
 .secoes ul li:hover {
+    font-size: 1.1rem;
     transition: 0.2s;
     color: #e1186c;
 }
@@ -130,6 +131,7 @@ main {
 }
 
 .sair a:hover {
+    font-size: 1.1rem;
     transition: 0.2s;
     color: #e40d60;
 }
@@ -206,20 +208,20 @@ main {
     max-width: 250px;
     height: 30%;
     padding: 10px;
-    border: 1px solid #cb3a76;
+    border: 1px solid black;
     border-radius: 12px;
     flex: 1fr 1fr;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
+    transition: 0.2s;
     cursor: pointer;   
 }
 
 .card-vinicola:hover {
     transition: 0.2s;
-    background-color: #e1186c24;
+    background-color: rgba(225, 24, 108, 0.155);
 }
 
 
@@ -264,7 +266,6 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 20px;
-
 }
 
 
@@ -283,7 +284,7 @@ main {
 
 .card-KPI:hover {
     transition: 0.2s;
-    background-color: #e1186c24;
+    background-color: #210b1424;
 }
 
 
@@ -376,15 +377,18 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: left;
+    align-items: start;
     gap: 30px;
+
+    flex-wrap: wrap;
 }
 
 
 /* CARD BARRIL */
 
-#card-barril1, #card-barril2, #card-barril3, #card-barril4, #card-barril5 {
-    width: 120px;
-    max-width: 250px; 
+#card-barril1, #card-barril2, #card-barril3, #card-barril4, #card-barril5, #card-barril6, #card-barril7, #card-barril8, #card-barril9, #card-barril10, #card-barril11, #card-barril12 {
+    width: 100%;
+    max-width: 195px; 
     height: 100%;
     max-height: 25%;
 }
@@ -393,19 +397,19 @@ main {
     width: 100%;
     height: 100%;
     padding: 10px;
-    border: 1px solid #cb3a76;
+    border: 1px solid black;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
+    transition: 0.2s;
     cursor: pointer;  
 }
 
 .card-barril:hover {
     transition: 0.2s;
-    background-color: #e1186c24;
+    background-color: #210b1424;
 }
 
 
@@ -429,7 +433,7 @@ main {
 
 /* -------------------- DASHBOARDS -------------------- */
 
-#dash1, #dash2, #dash3, #dash4, #dash5 {
+#dash1, #dash2, #dash3, #dash4, #dash5, #dash6, #dash7, #dash8, #dash9, #dash10, #dash11, #dash12 {
     width: 100%;
     height: 100%;
 }

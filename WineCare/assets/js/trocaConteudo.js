@@ -62,6 +62,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("card-barril3").style.display = "block";
         document.getElementById("card-barril4").style.display = "block";
         document.getElementById("card-barril5").style.display = "block";
+        document.getElementById("card-barril6").style.display = "block";
+        document.getElementById("card-barril7").style.display = "block";
+        document.getElementById("card-barril8").style.display = "block";
+        document.getElementById("card-barril9").style.display = "block";
+        document.getElementById("card-barril10").style.display = "block";
+        document.getElementById("card-barril11").style.display = "block";
+        document.getElementById("card-barril12").style.display = "block";
 
     });
 
@@ -81,6 +88,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("dash3").style.display = "none";
         document.getElementById("dash4").style.display = "none";
         document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
+        
 
     });
     
@@ -99,6 +114,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("dash3").style.display = "none";
         document.getElementById("dash4").style.display = "none";
         document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
 
     });
 
@@ -117,6 +139,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("dash3").style.display = "block";
         document.getElementById("dash4").style.display = "none";
         document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
 
     });
 
@@ -135,6 +164,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("dash3").style.display = "none";
         document.getElementById("dash4").style.display = "block";
         document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
         
     });
 
@@ -153,6 +189,188 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("dash3").style.display = "none";
         document.getElementById("dash4").style.display = "none";
         document.getElementById("dash5").style.display = "block";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
+
+    });
+
+    document.getElementById("card-barril6").addEventListener("click", function() {
+        
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("barril-cards-content").style.display = "none";
+        document.getElementById("vinicola-container").style.display = "none";
+        document.getElementById("barril-container").style.display = "block";
+        document.getElementById("dash-content").style.display = "block";
+        
+        document.getElementById("dash1").style.display = "none";
+        document.getElementById("dash2").style.display = "none";
+        document.getElementById("dash3").style.display = "none";
+        document.getElementById("dash4").style.display = "none";
+        document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "block";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
+
+    });
+
+    document.getElementById("card-barril7").addEventListener("click", function() {
+        
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("barril-cards-content").style.display = "none";
+        document.getElementById("vinicola-container").style.display = "none";
+        document.getElementById("barril-container").style.display = "block";
+        document.getElementById("dash-content").style.display = "block";
+        
+        document.getElementById("dash1").style.display = "none";
+        document.getElementById("dash2").style.display = "none";
+        document.getElementById("dash3").style.display = "none";
+        document.getElementById("dash4").style.display = "none";
+        document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "block";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
+
+    });
+
+    document.getElementById("card-barril8").addEventListener("click", function() {
+        
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("barril-cards-content").style.display = "none";
+        document.getElementById("vinicola-container").style.display = "none";
+        document.getElementById("barril-container").style.display = "block";
+        document.getElementById("dash-content").style.display = "block";
+        
+        document.getElementById("dash1").style.display = "none";
+        document.getElementById("dash2").style.display = "none";
+        document.getElementById("dash3").style.display = "none";
+        document.getElementById("dash4").style.display = "none";
+        document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "block";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
+
+    });
+
+    document.getElementById("card-barril9").addEventListener("click", function() {
+        
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("barril-cards-content").style.display = "none";
+        document.getElementById("vinicola-container").style.display = "none";
+        document.getElementById("barril-container").style.display = "block";
+        document.getElementById("dash-content").style.display = "block";
+        
+        document.getElementById("dash1").style.display = "none";
+        document.getElementById("dash2").style.display = "none";
+        document.getElementById("dash3").style.display = "none";
+        document.getElementById("dash4").style.display = "none";
+        document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "block";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
+
+    });
+
+    document.getElementById("card-barril10").addEventListener("click", function() {
+        
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("barril-cards-content").style.display = "none";
+        document.getElementById("vinicola-container").style.display = "none";
+        document.getElementById("barril-container").style.display = "block";
+        document.getElementById("dash-content").style.display = "block";
+        
+        document.getElementById("dash1").style.display = "none";
+        document.getElementById("dash2").style.display = "none";
+        document.getElementById("dash3").style.display = "none";
+        document.getElementById("dash4").style.display = "none";
+        document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "block";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "none";
+
+    });
+
+    document.getElementById("card-barril11").addEventListener("click", function() {
+        
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("barril-cards-content").style.display = "none";
+        document.getElementById("vinicola-container").style.display = "none";
+        document.getElementById("barril-container").style.display = "block";
+        document.getElementById("dash-content").style.display = "block";
+        
+        document.getElementById("dash1").style.display = "none";
+        document.getElementById("dash2").style.display = "none";
+        document.getElementById("dash3").style.display = "none";
+        document.getElementById("dash4").style.display = "none";
+        document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "block";
+        document.getElementById("dash12").style.display = "none";
+
+    });
+
+    document.getElementById("card-barril12").addEventListener("click", function() {
+        
+        
+        // MOSTRA O CONTEÚDO DA VINICOLA E ESCONDE OS OUTROS
+        
+        document.getElementById("barril-cards-content").style.display = "none";
+        document.getElementById("vinicola-container").style.display = "none";
+        document.getElementById("barril-container").style.display = "block";
+        document.getElementById("dash-content").style.display = "block";
+        
+        document.getElementById("dash1").style.display = "none";
+        document.getElementById("dash2").style.display = "none";
+        document.getElementById("dash3").style.display = "none";
+        document.getElementById("dash4").style.display = "none";
+        document.getElementById("dash5").style.display = "none";
+        document.getElementById("dash6").style.display = "none";
+        document.getElementById("dash7").style.display = "none";
+        document.getElementById("dash8").style.display = "none";
+        document.getElementById("dash9").style.display = "none";
+        document.getElementById("dash10").style.display = "none";
+        document.getElementById("dash11").style.display = "none";
+        document.getElementById("dash12").style.display = "block";
 
     });
 
@@ -176,6 +394,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("card-barril3").style.display = "none";
         document.getElementById("card-barril4").style.display = "none";
         document.getElementById("card-barril5").style.display = "none";
+        document.getElementById("card-barril6").style.display = "none";
+        document.getElementById("card-barril7").style.display = "none";
+        document.getElementById("card-barril8").style.display = "none";
+        document.getElementById("card-barril9").style.display = "none";
+        document.getElementById("card-barril10").style.display = "none";
+        document.getElementById("card-barril11").style.display = "none";
+        document.getElementById("card-barril12").style.display = "none";
 
     });
 
@@ -195,6 +420,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("card-barril3").style.display = "none";
         document.getElementById("card-barril4").style.display = "none";
         document.getElementById("card-barril5").style.display = "none";
+        document.getElementById("card-barril6").style.display = "none";
+        document.getElementById("card-barril7").style.display = "none";
+        document.getElementById("card-barril8").style.display = "none";
+        document.getElementById("card-barril9").style.display = "none";
+        document.getElementById("card-barril10").style.display = "none";
+        document.getElementById("card-barril11").style.display = "none";
+        document.getElementById("card-barril12").style.display = "none";
 
     });
 
@@ -211,9 +443,16 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("card-barril1").style.display = "none";
         document.getElementById("card-barril2").style.display = "none";
-        document.getElementById("card-barril3").style.display = "block";
+        document.getElementById("card-barril3").style.display = "none";
         document.getElementById("card-barril4").style.display = "none";
         document.getElementById("card-barril5").style.display = "none";
+        document.getElementById("card-barril6").style.display = "none";
+        document.getElementById("card-barril7").style.display = "none";
+        document.getElementById("card-barril8").style.display = "none";
+        document.getElementById("card-barril9").style.display = "none";
+        document.getElementById("card-barril10").style.display = "none";
+        document.getElementById("card-barril11").style.display = "none";
+        document.getElementById("card-barril12").style.display = "none";
 
     });
 
@@ -233,6 +472,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("card-barril3").style.display = "none";
         document.getElementById("card-barril4").style.display = "block";
         document.getElementById("card-barril5").style.display = "none";
+        document.getElementById("card-barril6").style.display = "none";
+        document.getElementById("card-barril7").style.display = "none";
+        document.getElementById("card-barril8").style.display = "none";
+        document.getElementById("card-barril9").style.display = "none";
+        document.getElementById("card-barril10").style.display = "none";
+        document.getElementById("card-barril11").style.display = "none";
+        document.getElementById("card-barril12").style.display = "none";
 
     });
 
@@ -252,6 +498,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("card-barril3").style.display = "none";
         document.getElementById("card-barril4").style.display = "none";
         document.getElementById("card-barril5").style.display = "block";
+        document.getElementById("card-barril6").style.display = "block";
+        document.getElementById("card-barril7").style.display = "block";
+        document.getElementById("card-barril8").style.display = "block";
+        document.getElementById("card-barril9").style.display = "block";
+        document.getElementById("card-barril10").style.display = "block";
+        document.getElementById("card-barril11").style.display = "block";
+        document.getElementById("card-barril12").style.display = "block";
 
     });
 });
