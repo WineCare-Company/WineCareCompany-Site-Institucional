@@ -1539,6 +1539,45 @@
 </html>
 
 <script>
+
+
+
+fetch("/usuarios/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: id
+            })
+        }).then(function (resposta) {
+            console.log("quizResultado caiu aqui")
+
+            if (resposta.ok) {
+                console.log("resposta quizGrafico" + resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    var obj = JSON.stringify(json);
+                    sessionStorage.id = json.id;
+                    console.log(obj);
+                    plotarGrafico_2(json);
+
+                });
+
+            } else {
+                console.log("Houve um erro ao terminar o quiz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
     const linha1 = document.getElementById('line1');
     const linha2 = document.getElementById('line2');
     const linha3 = document.getElementById('line3');
