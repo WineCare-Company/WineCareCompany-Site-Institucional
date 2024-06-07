@@ -13,11 +13,15 @@
     <script src="../assets/js/atualizarData.js"></script>
     <!-- TROCA DE CONTEUDO -->
     <script src="../assets/js/trocaConteudo.js"></script>
+
+    <script src=https://code.highcharts.com/stock/highstock.js></script>
+    <script src=https://code.highcharts.com/stock/highcharts-more.js></script>
+
     <!-- TITLE -->
     <title>Dashboard</title>
 </head>
 
-<body>
+<body onload="plotarGauges()">
 
 
     <!-- CONTAINER PRINCIPAL -->
@@ -139,7 +143,7 @@
 
                             <div>
 
-                                <p class="sensor-quantidade">1/12</p>
+                                <p class="sensor-quantidade" id="sensor_qtd"></p>
 
                                 <span>Sensores Desconectados</span>
 
@@ -158,7 +162,7 @@
                             <div>
 
                                 <div>
-                                    <p class="sensor-quantidade sensor-umido">1</p>
+                                    <p class="sensor-quantidade sensor-umido" id="umidade_acima"></p>
                                 </div>
 
                                 <span>Umidade Acima do Adequado</span>
@@ -178,7 +182,7 @@
                             <div>
 
                                 <div>
-                                    <p class="sensor-quantidade sensor-pouco-umido">0</p>
+                                    <p class="sensor-quantidade sensor-pouco-umido" id="umidade_abaixo"></p>
 
                                 </div>
 
@@ -199,7 +203,7 @@
                             <div>
 
                                 <div>
-                                    <p class="sensor-quantidade sensor-gelado">1</p>
+                                    <p class="sensor-quantidade sensor-gelado" id="temperatura_abaixo"></p>
                                 </div>
 
                                 <span>Temperatura Abaixo do Adequado</span>
@@ -219,7 +223,7 @@
                             <div>
 
                                 <div>
-                                    <p class="sensor-quantidade sensor-quente">7</p>
+                                    <p class="sensor-quantidade sensor-quente" id="temperatura_acima"></p>
                                 </div>
 
                                 <span>Temperatura Acima do Adequado</span>
@@ -428,8 +432,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/nada.png" alt="">
-                                                <p>Temperatura</p>
+
                                             </div>
 
                                         </div>
@@ -796,26 +799,22 @@
 
                                     <div class="metricas-direita">
 
+                                        <div class="data">
+                                            <p>Métricas Atual</p>
+                                            <p id="data-atual5"></p>
+                                        </div>
+
                                         <div class="metricas-topo">
 
-                                            <div class="data">
-                                                <p>Métricas Atual</p>
-                                                <p id="data-atual5"></p>
-                                            </div>
+                                            <div id="tempGrafico">
 
-                                            <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
-                                                <p>Temperatura</p>
                                             </div>
 
                                         </div>
 
-                                        <div class="metricas-baixo">
+                                        <div class="metricas-baixo" id="divTempGrafico">
 
-                                            <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
-                                                <p>Umidade</p>
-                                            </div>
+                                            <div id="tempGrafico2"></div>
 
                                         </div>
 
@@ -1541,43 +1540,6 @@
 <script>
 
 
-
-fetch("/usuarios/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                idServer: id
-            })
-        }).then(function (resposta) {
-            console.log("quizResultado caiu aqui")
-
-            if (resposta.ok) {
-                console.log("resposta quizGrafico" + resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    var obj = JSON.stringify(json);
-                    sessionStorage.id = json.id;
-                    console.log(obj);
-                    plotarGrafico_2(json);
-
-                });
-
-            } else {
-                console.log("Houve um erro ao terminar o quiz!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-
-                });
-
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
     const linha1 = document.getElementById('line1');
     const linha2 = document.getElementById('line2');
     const linha3 = document.getElementById('line3');
@@ -1609,41 +1571,41 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperatura capturada', 
+                label: 'Temperatura capturada',
                 data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 borderWidth: 2,
                 tension: 0.5,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
-            }, {    
-                label: 'Temperatura Max.', 
+                borderColor: 'blue',
+            }, {
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.5,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.5,
                 backgroundColor: 'red',
-        borderColor: 'red',
-                
+                borderColor: 'red',
+
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.5,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.5,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -1651,7 +1613,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -1667,35 +1629,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -1704,7 +1666,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -1715,40 +1677,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -1756,7 +1718,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -1772,35 +1734,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -1809,7 +1771,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -1820,40 +1782,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -1861,7 +1823,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -1877,35 +1839,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -1914,7 +1876,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -1925,50 +1887,50 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 16, 15],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
             scales: {
                 y: {
-                    
+
                     beginAtZero: false,
                     min: 13,
-                    max : 21
-                    
+                    max: 21
+
                 }
             }
         }
@@ -1984,35 +1946,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2021,156 +1983,54 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
     });
 
-    new Chart(linha5, {
-        type: 'line',
-        data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
-            datasets: [{
-                label: 'Temperaturas capturadas', 
-                data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'blue',
-        borderColor: 'blue',
-            }, {
-                label: 'Temperatura Max.', 
-                data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'red',
-        borderColor: 'red',
-            }, {
-                label: 'Temperatura Min', 
-                data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'red',
-        borderColor: 'red',
-            }, {
-                label: 'Aviso temperatura Min.', 
-                data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'orange',
-        borderColor: 'orange',
-            }, {
-                label: 'Aviso temperatura Max.', 
-                data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
-                borderWidth: 2,
-                tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: false,
-                    min: 14,
-                    max : 22
-                }
-            }
-        }
-    });
 
-    new Chart(barra5, {
-        type: 'line',
-        data: {
-            labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
-            datasets: [{
-                label: 'Umidades capturadas',
-                data: [70, 69, 60, 65, 70, 72, 78, 75, 70, 69, 65, 67],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'blue',
-        borderColor: 'blue',
-            }, {
-                label: 'Umidade Max.', 
-                data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'red',
-        borderColor: 'red',
-            }, {
-                label: 'Umidade Min.', 
-                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'red',
-        borderColor: 'red',
-            }, {
-                label: 'Aviso umidade Min.', 
-                data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
-                borderWidth: 2,
-                tension: 0.1,
-                backgroundColor: 'orange',
-        borderColor: 'orange',
-            }, {
-                label: 'Aviso umidade Max.', 
-                data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
-                borderWidth: 2,
-                tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: false,
-                    min: 55,
-                    max : 85
-                }
-            }
-        },
-    });
+
 
     new Chart(linha6, {
         type: 'line',
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2178,7 +2038,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -2194,35 +2054,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2231,7 +2091,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -2242,40 +2102,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2283,7 +2143,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -2299,35 +2159,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2336,7 +2196,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -2347,40 +2207,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2388,7 +2248,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -2404,35 +2264,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2441,7 +2301,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -2452,40 +2312,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2493,7 +2353,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -2509,35 +2369,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2546,7 +2406,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -2557,40 +2417,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2598,7 +2458,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -2614,35 +2474,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2651,7 +2511,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -2662,40 +2522,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2703,7 +2563,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -2719,35 +2579,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2756,7 +2616,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
@@ -2767,40 +2627,40 @@ fetch("/usuarios/", {
         data: {
             labels: ['12h', '11h', '10h', '9h', '8h', '7h', '6h', '5h', '4h', '3h', '2h', '1h'],
             datasets: [{
-                label: 'Temperaturas capturadas', 
+                label: 'Temperaturas capturadas',
                 data: [18, 17, 17, 16, 18, 19, 17, 16, 15, 17, 18, 19],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Temperatura Max.', 
+                label: 'Temperatura Max.',
                 data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Temperatura Min', 
+                label: 'Temperatura Min',
                 data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso temperatura Min.', 
+                label: 'Aviso temperatura Min.',
                 data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso temperatura Max.', 
+                label: 'Aviso temperatura Max.',
                 data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2808,7 +2668,7 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 14,
-                    max : 22
+                    max: 22
                 }
             }
         }
@@ -2824,35 +2684,35 @@ fetch("/usuarios/", {
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'blue',
-        borderColor: 'blue',
+                borderColor: 'blue',
             }, {
-                label: 'Umidade Max.', 
+                label: 'Umidade Max.',
                 data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Umidade Min.', 
+                label: 'Umidade Min.',
                 data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'red',
-        borderColor: 'red',
+                borderColor: 'red',
             }, {
-                label: 'Aviso umidade Min.', 
+                label: 'Aviso umidade Min.',
                 data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
                 borderWidth: 2,
                 tension: 0.1,
                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                borderColor: 'orange',
             }, {
-                label: 'Aviso umidade Max.', 
+                label: 'Aviso umidade Max.',
                 data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
                 borderWidth: 2,
                 tension: 0.1,
-                 backgroundColor: 'orange',
-        borderColor: 'orange',
+                backgroundColor: 'orange',
+                borderColor: 'orange',
             }]
         },
         options: {
@@ -2861,10 +2721,604 @@ fetch("/usuarios/", {
                 y: {
                     beginAtZero: false,
                     min: 55,
-                    max : 85
+                    max: 85
                 }
             }
         },
     });
+    var fkSensor = 5;
+    var listaTempHora = [];
+    obterDadosGrafico();
+    function obterDadosGrafico() {
+        fetch("/dash/dashResultados", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkSensor: fkSensor
+            })
+        }).then(function (resposta) {
+            console.log("dashResult1 caiu")
 
-</script>   
+            if (resposta.ok) {
+                console.log("resposta dashResultados1" + resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    var obj = JSON.stringify(json);
+                    sessionStorage.id = json.id;
+                    console.log(obj);
+                    plotarGrafico_1(json);
+
+                });
+
+            } else {
+                console.log("Houve um erro ao terminar o quiz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        fetch("/dash/dashResultados2", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkSensor: fkSensor
+            })
+        }).then(function (resposta) {
+            console.log("dashResult2 caiu")
+
+            if (resposta.ok) {
+                console.log("resposta dashResultados2" + resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    var obj = JSON.stringify(json);
+                    sessionStorage.id = json.id;
+                    console.log(obj);
+                    plotarGrafico_2(json);
+
+                });
+
+            } else {
+                console.log("Houve um erro ao terminar o quiz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        fetch("/dash/dashResultados3", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkSensor: fkSensor
+            })
+        }).then(function (resposta) {
+            console.log("dashResult3 caiu")
+
+            if (resposta.ok) {
+                console.log("resposta dashResultados3" + resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    var obj = JSON.stringify(json);
+                    sessionStorage.id = json.id;
+                    console.log(obj);
+                    plotarGrafico_3(json);
+
+                });
+
+            } else {
+                console.log("Houve um erro ao terminar o quiz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        fetch("/dash/dashResultados4", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkSensor: fkSensor
+            })
+        }).then(function (resposta) {
+            console.log("dashResult4 caiu")
+
+            if (resposta.ok) {
+                console.log("resposta dashResultados4" + resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    var obj = JSON.stringify(json);
+                    sessionStorage.id = json.id;
+                    console.log(obj);
+                    plotarGrafico_4(json);
+
+                });
+
+            } else {
+                console.log("Houve um erro ao terminar o quiz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        fetch(`/dash/kpi1/`)
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (dados) {
+                        console.log("Dados recebidos: ", JSON.stringify(dados));
+
+
+                        plotarGrafico_5(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado na kpi1 ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+    function plotarGrafico_1(dados) {
+
+        new Chart(linha5, {
+            type: 'line',
+            data: {
+                labels: ['12Min', '11Min', '10Min', '9Min', '8Min', '7Min', '6Min', '5Min', '4Min', '3Min', '2Min', '1Min'],
+                datasets: [
+                    {
+                        label: 'Temperaturas capturadas',
+                        data:
+                            [dados[0].temperaturaHoras, dados[1].temperaturaHoras, dados[2].temperaturaHoras, dados[3].temperaturaHoras, dados[4].temperaturaHoras, dados[5].temperaturaHoras, dados[6].temperaturaHoras, dados[7].temperaturaHoras, dados[8].temperaturaHoras, dados[9].temperaturaHoras, dados[10].temperaturaHoras, dados[11].temperaturaHoras],
+                        borderWidth: 2,
+                        tension: 0.1,
+                        backgroundColor: 'blue',
+                        borderColor: 'blue',
+                    },
+                    {
+                        label: 'Temperatura Max.',
+                        data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+                        borderWidth: 2,
+                        tension: 0.1,
+                        backgroundColor: 'red',
+                        borderColor: 'red',
+                    }, {
+                        label: 'Temperatura Min',
+                        data: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+                        borderWidth: 2,
+                        tension: 0.1,
+                        backgroundColor: 'red',
+                        borderColor: 'red',
+                    }, {
+                        label: 'Aviso temperatura Min.',
+                        data: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+                        borderWidth: 2,
+                        tension: 0.1,
+                        backgroundColor: 'orange',
+                        borderColor: 'orange',
+                    }, {
+                        label: 'Aviso temperatura Max.',
+                        data: [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19],
+                        borderWidth: 2,
+                        tension: 0.1,
+                        backgroundColor: 'orange',
+                        borderColor: 'orange',
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 14,
+                        max: 22
+                    }
+                }
+            }
+        });
+    }
+
+    function plotarGrafico_2(dados) {
+        let umidadeHoras = dados.map(item => item.umidadeAmbiente);
+        new Chart(barra5, {
+            type: 'line',
+            data: {
+                labels: ['12Min', '11Min', '10Min', '9Min', '8Min', '7Min', '6Min', '5Min', '4Min', '3Min', '2Min', '1Min'],
+                datasets: [{
+                    label: 'Umidades capturadas',
+                    data: [dados[0].umidadeHoras, dados[1].umidadeHoras, dados[2].umidadeHoras, dados[3].umidadeHoras, dados[4].umidadeHoras, dados[5].umidadeHoras, dados[6].umidadeHoras, dados[7].umidadeHoras, dados[8].umidadeHoras, dados[9].umidadeHoras, dados[10].umidadeHoras, dados[11].umidadeHoras],
+                    borderWidth: 2,
+                    tension: 0.1,
+                    backgroundColor: 'blue',
+                    borderColor: 'blue',
+                }, {
+                    label: 'Umidade Max.',
+                    data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+                    borderWidth: 2,
+                    tension: 0.1,
+                    backgroundColor: 'red',
+                    borderColor: 'red',
+                }, {
+                    label: 'Umidade Min.',
+                    data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                    borderWidth: 2,
+                    tension: 0.1,
+                    backgroundColor: 'red',
+                    borderColor: 'red',
+                }, {
+                    label: 'Aviso umidade Min.',
+                    data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
+                    borderWidth: 2,
+                    tension: 0.1,
+                    backgroundColor: 'orange',
+                    borderColor: 'orange',
+                }, {
+                    label: 'Aviso umidade Max.',
+                    data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75],
+                    borderWidth: 2,
+                    tension: 0.1,
+                    backgroundColor: 'orange',
+                    borderColor: 'orange',
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 55,
+                        max: 85
+                    }
+                }
+            },
+        });
+
+    }
+    function plotarGrafico_5(dados) {
+        let desconectados = dados.map(item=>item.numBarrisNull)
+        sensor_qtd.innerHTML += `${desconectados}`;
+    }
+
+
+
+   
+function plotarGrafico_3(dados){
+    let temperaturaAtual = dados.map(item=>item.temperaturaAtual)
+        var tempAtual = temperaturaAtual;
+      
+
+
+        var gaugeTemp = Highcharts.chart('tempGrafico', {
+            chart: {
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                height: '70%'
+            },
+
+            title: {
+                text: 'Temperatura'
+            },
+
+            pane: {
+                startAngle: -90,
+                endAngle: 90,
+                background: null,
+                center: ['50%', '75%'],
+                size: '120%'
+            },
+            yAxis: {
+                min: 0,
+                max: 35,
+                tickPixelInterval: 72,
+                tickPosition: 'inside',
+                tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+                tickLength: 20,
+                tickWidth: 0,
+                minorTickInterval: null,
+
+                labels: {
+                    distance: 20,
+
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+
+                lineWidth: 0,
+
+                plotBands: [{
+                    from: 0,
+                    to: 10,
+                    color: '#FF0000',
+                    thickness: 20
+                }, {
+                    from: 10,
+                    to: 15,
+                    color: 'yellow',
+                    thickness: 20
+                },
+                {
+                    from: 15,
+                    to: 20,
+                    color: '#00FF00',
+                    thickness: 20
+                },
+                {
+                    from: 20,
+                    to: 25,
+                    color: 'yellow',
+                    thickness: 20
+                }, {
+                    from: 25,
+                    to: 35,
+                    color: '#FF0000',
+                    thickness: 20
+                }]
+            },
+            series: [{
+                name: 'Temperatura',
+                data: [tempAtual],
+                tooltip: {
+                    valueSuffix: '°C'
+                },
+                dataLabels: {
+                    format: `Temperatura ${tempAtual} °C`,
+                    borderWidth: 0,
+                    color: (
+                        Highcharts.defaultOptions.title &&
+                        Highcharts.defaultOptions.title.style &&
+                        Highcharts.defaultOptions.title.style.color
+                    ) || '#333333',
+                    style: {
+                        fontSize: '16px'
+                    }
+                },
+                dial: {
+                    radius: '70%',
+                    backgroundColor: 'gray',
+                    baseWidth: 12,
+                    baseLength: '0%',
+                    rearLength: '0%'
+                },
+                pivot: {
+                    backgroundColor: 'gray',
+                    radius: 6
+                }
+            }]
+        });
+    }
+
+
+
+function plotarGrafico_4(dados){
+    let umidadeAtual = dados.map(item=>item.umidadeAtual)
+        var umiAtual = umidadeAtual;
+        var gaugeUmi = Highcharts.chart('tempGrafico2', {
+            chart: {
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                height: '70%'
+            },
+
+            title: {
+                text: 'Umidade'
+            },
+
+
+
+            pane: {
+                startAngle: -90,
+                endAngle: 90,
+                background: null,
+                center: ['50%', '75%'],
+                size: '120%'
+            },
+
+            yAxis: {
+                min: 50,
+                max: 90,
+                tickPixelInterval: 72,
+                tickPosition: 'inside',
+                tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+                tickLength: 20,
+                tickWidth: 0,
+                minorTickInterval: null,
+
+                labels: {
+                    distance: 20,
+
+                    style: {
+                        fontSize: '14px'
+                    }
+
+                },
+
+                lineWidth: 0,
+
+                plotBands: [{
+                    from: 50,
+                    to: 60,
+                    color: '#FF0000',
+                    thickness: 20
+                }, {
+                    from: 60,
+                    to: 66,
+                    color: '#FFFF00',
+                    thickness: 20
+                },
+
+                {
+                    from: 66,
+                    to: 74,
+                    color: '#00FF00',
+                    thickness: 20
+                },
+
+                {
+                    from: 74,
+                    to: 80,
+                    color: '#FFFF00',
+                    thickness: 20
+                }, {
+                    from: 80,
+                    to: 90,
+                    color: '#FF0000',
+                    thickness: 20
+                }]
+            },
+
+            series: [{
+                name: 'Umidade',
+                data: [umiAtual],
+
+                tooltip: {
+                    valueSuffix: '%'
+                },
+
+                dataLabels: {
+                    format: `Umidade ${umiAtual}%`,
+                    borderWidth: 0,
+                    color: (
+                        Highcharts.defaultOptions.title &&
+                        Highcharts.defaultOptions.title.style &&
+                        Highcharts.defaultOptions.title.style.color
+                    ) || '#333333',
+                    style: {
+                        fontSize: '16px'
+                    }
+                },
+
+                dial: {
+                    radius: '70%',
+                    backgroundColor: 'gray',
+                    baseWidth: 12,
+                    baseLength: '0%',
+                    rearLength: '0%'
+                },
+
+                pivot: {
+                    backgroundColor: 'gray',
+                    radius: 6
+                }
+            }]
+        });
+    }
+  
+        // var decimalTemp = tempAtual.toFixed(2)
+        // var decimalUmi = umiAtual.toFixed(2)
+
+        // if (tempAtual >= 10 && tempAtual <= 18) {
+        //     kpiTemp.innerHTML = `<div class = "avisoCerto"> Temperatura:${decimalTemp} </div>`
+        //     analiseBomTemp = true
+        //     analiseMedioTemp = false
+        //     analiseRuimTemp = false
+        //     avisoFinal = false
+        //     avisoMedio = false
+
+        // } else if ((tempAtual >= 8 && tempAtual <= 10) || (tempAtual >= 18 && tempAtual <= 20)) {
+        //     kpiTemp.innerHTML = `<div class = "avisoMedio"> Temperatura:${decimalTemp} </div>`
+        //     analiseBomTemp = false
+        //     analiseMedioTemp = true
+        //     analiseRuimTemp = false
+        //     avisoFinal = false
+        //     avisoMedio = true
+
+
+        // } else if (tempAtual <= 8 || tempAtual > 20) {
+        //     kpiTemp.innerHTML = `<div class = "avisoAbaixo"> Temperatura:${decimalTemp} </div>`
+        //     analiseBomTemp = false
+        //     analiseMedioTemp = false
+        //     analiseRuimTemp = true
+        //     avisoFinal = true
+        //     avisoMedio = false
+        // }
+
+        // if (umiAtual >= 60 && umiAtual <= 70) {
+        //     kpiUmi.innerHTML = `<div class = "avisoCerto"> Umidade:${decimalUmi} </div>`
+        //     analiseBomUmi = true
+        //     analiseMedioUmi = false
+        //     analiseRuimUmi = false
+        //     avisoFinal = false
+        //     avisoMedio = false
+
+        // } else if ((umiAtual >= 55 && umiAtual <= 59) || (umiAtual >= 71 && umiAtual <= 75)) {
+        //     kpiUmi.innerHTML = `<div class = "avisoMedio"> Umidade:${decimalUmi} </div>`
+        //     analiseBomUmi = false
+        //     analiseMedioUmi = true
+        //     analiseRuimUmi = false
+        //     avisoFinal = false
+        //     avisoMedio = true
+
+        // } else if (umiAtual < 55 || umiAtual > 75) {
+        //     kpiUmi.innerHTML = `<div class = "avisoAbaixo"> Umidade:${decimalUmi} </div>`
+        //     analiseBomUmi = false
+        //     analiseMedioUmi = false
+        //     analiseRuimUmi = true
+        //     avisoFinal = true
+        //     avisoMedio = false
+        // }
+
+        // if (analiseBomTemp && analiseBomUmi) {
+        //     aviso.innerHTML = `<div class = "avisoCerto"> Tudo certo por aqui</div>`
+        //     avisoFinal = false
+        //     avisoMedio = false
+        // } else if (analiseRuimTemp || analiseRuimUmi && (analiseMedioTemp || analiseMedioUmi)) {
+        //     aviso.innerHTML = `<div class = "avisoAbaixo"> ALERTA!! </div>`
+        //     avisoFinal = true
+        //     avisoMedio = false
+        // } else if (analiseMedioTemp || analiseMedioUmi) {
+        //     aviso.innerHTML = `<div class = "avisoMedio1"> Risco moderado! </div>`
+        //     avisoFinal = false
+        //     avisoMedio = true
+        // } else if (analiseRuimTemp || analiseRuimUmi) {
+        //     aviso.innerHTML = `<div class = "avisoAbaixo"> ALERTA!! </div>`
+        //     avisoFinal = true
+        //     avisoMedio = false
+        // }
+
+        // setTimeout(() => atualizarGrafico(resposta, idCamara, gaugeTemp, gaugeUmi), 600000);
+
+        // if (resposta.umiAtual < 60 || resposta.umiAtual > 70 || resposta.tempAtual < 10 || resposta.tempAtual > 18) {
+        //     atualizarGrafico(idCamara, dados, gaugeTemp, gaugeUmi);
+        // }
+
+    
+
+
+</script>
