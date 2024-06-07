@@ -2886,6 +2886,70 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+            fetch(`/dash/kpi2/`)
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (dados) {
+                        console.log("Dados recebidos: ", JSON.stringify(dados));
+
+
+                        plotarGrafico_6(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado na kpi2 ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+            fetch(`/dash/kpi3/`)
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (dados) {
+                        console.log("Dados recebidos: ", JSON.stringify(dados));
+
+
+                        plotarGrafico_7(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado na kpi3 ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+            fetch(`/dash/kpi4/`)
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (dados) {
+                        console.log("Dados recebidos: ", JSON.stringify(dados));
+
+
+                        plotarGrafico_8(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado na kpi4 ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+            fetch(`/dash/kpi5/`)
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (dados) {
+                        console.log("Dados recebidos: ", JSON.stringify(dados));
+
+
+                        plotarGrafico_9(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado na kpi5 ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
 
 

@@ -17,5 +17,16 @@ router.post("/dashResultados4", function(req,res){
 router.get("/kpi1", function(req,res){
     dashController.kpi1(req,res);
 });
-
+router.get("/kpi2", function(req,res){
+    dashController.kpi2(req,res);
+});
+router.get("/kpi3", function(req,res){
+    dashController.kpi3(req,res);
+});
+router.get("/kpi4", function(req,res){
+    dashController.kpi4(req,res);
+});
+router.get("/kpi5", function(req,res){
+    dashController.kpi5(req,res);
+});
 module.exports = router;
