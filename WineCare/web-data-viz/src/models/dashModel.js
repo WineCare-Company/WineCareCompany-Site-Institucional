@@ -75,7 +75,7 @@ FROM (
 function kpi3() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function kpi3(): ")
     var instrucaoSql = `
-    SELECT COUNT(*) AS numBarrisUmidadeAlta
+    SELECT COUNT(*) AS UmidadeBaixa
 FROM (
     SELECT fkSensor, umidadeAmbiente
     FROM dadosCaptados
@@ -109,9 +109,9 @@ FROM (
     return database.executar(instrucaoSql);
 }
 function kpi5() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function kpi4(): ")
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function kpi5(): ")
     var instrucaoSql = `
-    SELECT COUNT(*) AS numBarrisTempAlta
+    SELECT COUNT(*) AS numBarrisTempBaixa
     FROM (
         SELECT fkSensor, temperaturaAmbiente
         FROM dadosCaptados

@@ -21,7 +21,7 @@
     <title>Dashboard</title>
 </head>
 
-<body onload="plotarGauges()">
+<body>
 
 
     <!-- CONTAINER PRINCIPAL -->
@@ -38,7 +38,7 @@
             <div class="perfil">
 
                 <img src="../assets/img/dashboard/perfil.png">
-                <h3>Fernanda</h3>
+                <h3 id="nomeCliente"></h3>
 
             </div>
 
@@ -63,7 +63,7 @@
                 <div class="sair">
 
                     <img class="icone-sair" src="../assets/img/dashboard/logout.png">
-                    <p><a href="login.html">Sair da Conta</a></p>
+                    <p><a onclick="sair()" href="login.html">Sair da Conta</a></p>
 
                 </div>
 
@@ -2886,7 +2886,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-            fetch(`/dash/kpi2/`)
+        fetch(`/dash/kpi2/`)
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then(function (dados) {
@@ -2902,7 +2902,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-            fetch(`/dash/kpi3/`)
+        fetch(`/dash/kpi3/`)
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then(function (dados) {
@@ -2918,7 +2918,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-            fetch(`/dash/kpi4/`)
+        fetch(`/dash/kpi4/`)
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then(function (dados) {
@@ -2934,7 +2934,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-            fetch(`/dash/kpi5/`)
+        fetch(`/dash/kpi5/`)
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then(function (dados) {
@@ -3068,18 +3068,15 @@
         });
 
     }
-    function plotarGrafico_5(dados) {
-        let desconectados = dados.map(item=>item.numBarrisNull)
-        sensor_qtd.innerHTML += `${desconectados}`;
-    }
+    
 
 
 
-   
-function plotarGrafico_3(dados){
-    let temperaturaAtual = dados.map(item=>item.temperaturaAtual)
+
+    function plotarGrafico_3(dados) {
+        let temperaturaAtual = dados.map(item => item.temperaturaAtual)
         var tempAtual = temperaturaAtual;
-      
+
 
 
         var gaugeTemp = Highcharts.chart('tempGrafico', {
@@ -3187,8 +3184,8 @@ function plotarGrafico_3(dados){
 
 
 
-function plotarGrafico_4(dados){
-    let umidadeAtual = dados.map(item=>item.umidadeAtual)
+    function plotarGrafico_4(dados) {
+        let umidadeAtual = dados.map(item => item.umidadeAtual)
         var umiAtual = umidadeAtual;
         var gaugeUmi = Highcharts.chart('tempGrafico2', {
             chart: {
@@ -3302,87 +3299,31 @@ function plotarGrafico_4(dados){
                 }
             }]
         });
-    }
-  
-        // var decimalTemp = tempAtual.toFixed(2)
-        // var decimalUmi = umiAtual.toFixed(2)
-
-        // if (tempAtual >= 10 && tempAtual <= 18) {
-        //     kpiTemp.innerHTML = `<div class = "avisoCerto"> Temperatura:${decimalTemp} </div>`
-        //     analiseBomTemp = true
-        //     analiseMedioTemp = false
-        //     analiseRuimTemp = false
-        //     avisoFinal = false
-        //     avisoMedio = false
-
-        // } else if ((tempAtual >= 8 && tempAtual <= 10) || (tempAtual >= 18 && tempAtual <= 20)) {
-        //     kpiTemp.innerHTML = `<div class = "avisoMedio"> Temperatura:${decimalTemp} </div>`
-        //     analiseBomTemp = false
-        //     analiseMedioTemp = true
-        //     analiseRuimTemp = false
-        //     avisoFinal = false
-        //     avisoMedio = true
-
-
-        // } else if (tempAtual <= 8 || tempAtual > 20) {
-        //     kpiTemp.innerHTML = `<div class = "avisoAbaixo"> Temperatura:${decimalTemp} </div>`
-        //     analiseBomTemp = false
-        //     analiseMedioTemp = false
-        //     analiseRuimTemp = true
-        //     avisoFinal = true
-        //     avisoMedio = false
-        // }
-
-        // if (umiAtual >= 60 && umiAtual <= 70) {
-        //     kpiUmi.innerHTML = `<div class = "avisoCerto"> Umidade:${decimalUmi} </div>`
-        //     analiseBomUmi = true
-        //     analiseMedioUmi = false
-        //     analiseRuimUmi = false
-        //     avisoFinal = false
-        //     avisoMedio = false
-
-        // } else if ((umiAtual >= 55 && umiAtual <= 59) || (umiAtual >= 71 && umiAtual <= 75)) {
-        //     kpiUmi.innerHTML = `<div class = "avisoMedio"> Umidade:${decimalUmi} </div>`
-        //     analiseBomUmi = false
-        //     analiseMedioUmi = true
-        //     analiseRuimUmi = false
-        //     avisoFinal = false
-        //     avisoMedio = true
-
-        // } else if (umiAtual < 55 || umiAtual > 75) {
-        //     kpiUmi.innerHTML = `<div class = "avisoAbaixo"> Umidade:${decimalUmi} </div>`
-        //     analiseBomUmi = false
-        //     analiseMedioUmi = false
-        //     analiseRuimUmi = true
-        //     avisoFinal = true
-        //     avisoMedio = false
-        // }
-
-        // if (analiseBomTemp && analiseBomUmi) {
-        //     aviso.innerHTML = `<div class = "avisoCerto"> Tudo certo por aqui</div>`
-        //     avisoFinal = false
-        //     avisoMedio = false
-        // } else if (analiseRuimTemp || analiseRuimUmi && (analiseMedioTemp || analiseMedioUmi)) {
-        //     aviso.innerHTML = `<div class = "avisoAbaixo"> ALERTA!! </div>`
-        //     avisoFinal = true
-        //     avisoMedio = false
-        // } else if (analiseMedioTemp || analiseMedioUmi) {
-        //     aviso.innerHTML = `<div class = "avisoMedio1"> Risco moderado! </div>`
-        //     avisoFinal = false
-        //     avisoMedio = true
-        // } else if (analiseRuimTemp || analiseRuimUmi) {
-        //     aviso.innerHTML = `<div class = "avisoAbaixo"> ALERTA!! </div>`
-        //     avisoFinal = true
-        //     avisoMedio = false
-        // }
-
-        // setTimeout(() => atualizarGrafico(resposta, idCamara, gaugeTemp, gaugeUmi), 600000);
-
-        // if (resposta.umiAtual < 60 || resposta.umiAtual > 70 || resposta.tempAtual < 10 || resposta.tempAtual > 18) {
-        //     atualizarGrafico(idCamara, dados, gaugeTemp, gaugeUmi);
-        // }
-
-    
-
+        }
+            function plotarGrafico_5(dados) {
+                let desconectados = dados.map(item => item.numBarrisNull);
+                sensor_qtd.innerHTML += `${desconectados}`;
+            }
+            function plotarGrafico_7(dados) {
+                let umidadeAbaixo = dados.map(item => item.UmidadeBaixa);
+                umidade_abaixo.innerHTML += `${umidadeAbaixo}`;
+            }
+            function plotarGrafico_6(dados) {
+                var umidadeAcima = dados.map(item => item.numBarrisUmidadeAlta);
+                umidade_acima.innerHTML += `${umidadeAcima}`;
+            }
+            function plotarGrafico_9(dados) {
+                let tempAbaixo = dados.map(item => item.numBarrisTempBaixa);
+                temperatura_abaixo.innerHTML += `${tempAbaixo}`;
+            }
+            function plotarGrafico_8(dados) {
+                let tempAcima = dados.map(item => item.numBarrisTempAlta);
+                temperatura_acima.innerHTML += `${tempAcima}`;
+            }
+var nome = sessionStorage.NOME_USUARIO;
+nomeCliente.innerHTML += `${nome}`;
+function sair(){
+    sessionStorage.clear()
+}
 
 </script>
