@@ -146,6 +146,46 @@ function kpi5(req, res){
     });
 }
 
+function alertAcima(req, res) {
+    var alertaVermelho = req.body.alertaVermelhoServer;
+
+    if (alertaVermelho == undefined) {
+        res.status(400).send("Alerta vermelho acima do adequado está indefinido");
+    } else {
+
+        dashModel.alertAcima(alertaVermelho)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro do alerta vermelho acima do adequado",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+}
+
+function alertas(req, res){
+   
+        dashModel.alertas().then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado nos alerts")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar as respostas: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+    }
+
 module.exports = {
     dashResultados,
     dashResultados2,
@@ -155,5 +195,7 @@ module.exports = {
     kpi2,
     kpi3,
     kpi4,
-    kpi5
+    kpi5,
+    alertAcima,
+    alertas
 }

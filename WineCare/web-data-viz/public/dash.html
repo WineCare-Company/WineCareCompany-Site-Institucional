@@ -52,7 +52,8 @@
 
                 <ul>
                     <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
-                    <li id="notificacoes"><img class="icone" src="../assets/img/dashboard/bell.png">Notificações</li>
+                    <li id="notificacoes" onclick="alertas()"><img class="icone"
+                            src="../assets/img/dashboard/bell.png">Notificações</li>
                     <li id="configuracoes"><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões
                     </li>
                 </ul>
@@ -75,7 +76,6 @@
         <!-- CONTAINER DO LADO DIREITO -->
 
         <div class="container-direito">
-
 
             <!-- CONTAINER VINICOLA -->
 
@@ -1503,7 +1503,7 @@
                     </div>
 
                     <div class="notificacoes-conteudo">
-                        <h1>Implementação Futura!</h1>
+                        <div id="div_alertas" onclick="alertas()"></div>
                     </div>
 
                 </div>
@@ -1531,7 +1531,14 @@
 
         </div>
 
+        </div>
+
+
     </main>
+
+    <div id="alerta">
+
+    </div>
 
 </body>
 
@@ -2729,77 +2736,8 @@
     var fkSensor = 5;
     var listaTempHora = [];
     obterDadosGrafico();
+    obterDadosGrafico2();
     function obterDadosGrafico() {
-        fetch("/dash/dashResultados", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fkSensor: fkSensor
-            })
-        }).then(function (resposta) {
-            console.log("dashResult1 caiu")
-
-            if (resposta.ok) {
-                console.log("resposta dashResultados1" + resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    var obj = JSON.stringify(json);
-                    sessionStorage.id = json.id;
-                    console.log(obj);
-                    plotarGrafico_1(json);
-
-                });
-
-            } else {
-                console.log("Houve um erro ao terminar o quiz!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-
-                });
-
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-        fetch("/dash/dashResultados2", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fkSensor: fkSensor
-            })
-        }).then(function (resposta) {
-            console.log("dashResult2 caiu")
-
-            if (resposta.ok) {
-                console.log("resposta dashResultados2" + resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    var obj = JSON.stringify(json);
-                    sessionStorage.id = json.id;
-                    console.log(obj);
-                    plotarGrafico_2(json);
-
-                });
-
-            } else {
-                console.log("Houve um erro ao terminar o quiz!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-
-                });
-
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-        })
         fetch("/dash/dashResultados3", {
             method: "POST",
             headers: {
@@ -2951,9 +2889,124 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
+    function obterDadosGrafico2() {
+        fetch("/dash/dashResultados", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkSensor: fkSensor
+            })
+        }).then(function (resposta) {
+            console.log("dashResult1 caiu")
+
+            if (resposta.ok) {
+                console.log("resposta dashResultados1" + resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    var obj = JSON.stringify(json);
+                    sessionStorage.id = json.id;
+                    console.log(obj);
+                    plotarGrafico_1(json);
+
+                });
+
+            } else {
+                console.log("Houve um erro ao terminar o quiz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        fetch("/dash/dashResultados2", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkSensor: fkSensor
+            })
+        }).then(function (resposta) {
+            console.log("dashResult2 caiu")
+
+            if (resposta.ok) {
+                console.log("resposta dashResultados2" + resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    var obj = JSON.stringify(json);
+                    sessionStorage.id = json.id;
+                    console.log(obj);
+                    plotarGrafico_2(json);
+
+                });
+
+            } else {
+                console.log("Houve um erro ao terminar o quiz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+
+    }
+
+    setInterval(() => {
+        obterDadosGrafico()
+    }, 60000)
+
+    setInterval(() => {
+        obterDadosGrafico2()
+    }, 60000)
+    setInterval(() => {
+        plotarGrafico_1()
+    }, 60000)
+    setInterval(() => {
+        plotarGrafico_2()
+    }, 60000)
+
+
+    function alertas() {
+        fetch(`/dash/alertas/`)
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (dados) {
+                        console.log("Dados recebidos: ", JSON.stringify(dados));
+
+
+                        plotarGrafico_10(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado na kpi1 ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
 
 
     function plotarGrafico_1(dados) {
+
+        const ctx = document.getElementById('line5');
+
+        if (Chart.getChart(ctx)) {
+            Chart.getChart(ctx).destroy();
+        }
 
         new Chart(linha5, {
             type: 'line',
@@ -2963,7 +3016,7 @@
                     {
                         label: 'Temperaturas capturadas',
                         data:
-                            [dados[0].temperaturaHoras, dados[1].temperaturaHoras, dados[2].temperaturaHoras, dados[3].temperaturaHoras, dados[4].temperaturaHoras, dados[5].temperaturaHoras, dados[6].temperaturaHoras, dados[7].temperaturaHoras, dados[8].temperaturaHoras, dados[9].temperaturaHoras, dados[10].temperaturaHoras, dados[11].temperaturaHoras],
+                            [dados[11].temperaturaHoras, dados[10].temperaturaHoras, dados[9].temperaturaHoras, dados[8].temperaturaHoras, dados[7].temperaturaHoras, dados[6].temperaturaHoras, dados[5].temperaturaHoras, dados[4].temperaturaHoras, dados[3].temperaturaHoras, dados[2].temperaturaHoras, dados[1].temperaturaHoras, dados[0].temperaturaHoras],
                         borderWidth: 2,
                         tension: 0.1,
                         backgroundColor: 'blue',
@@ -3010,9 +3063,15 @@
                 }
             }
         });
+
     }
 
     function plotarGrafico_2(dados) {
+        const ctx = document.getElementById('bar5');
+
+        if (Chart.getChart(ctx)) {
+            Chart.getChart(ctx).destroy();
+        }
         let umidadeHoras = dados.map(item => item.umidadeAmbiente);
         new Chart(barra5, {
             type: 'line',
@@ -3020,7 +3079,7 @@
                 labels: ['12Min', '11Min', '10Min', '9Min', '8Min', '7Min', '6Min', '5Min', '4Min', '3Min', '2Min', '1Min'],
                 datasets: [{
                     label: 'Umidades capturadas',
-                    data: [dados[0].umidadeHoras, dados[1].umidadeHoras, dados[2].umidadeHoras, dados[3].umidadeHoras, dados[4].umidadeHoras, dados[5].umidadeHoras, dados[6].umidadeHoras, dados[7].umidadeHoras, dados[8].umidadeHoras, dados[9].umidadeHoras, dados[10].umidadeHoras, dados[11].umidadeHoras],
+                    data: [dados[11].umidadeHoras, dados[10].umidadeHoras, dados[9].umidadeHoras, dados[8].umidadeHoras, dados[7].umidadeHoras, dados[6].umidadeHoras, dados[5].umidadeHoras, dados[4].umidadeHoras, dados[3].umidadeHoras, dados[2].umidadeHoras, dados[1].umidadeHoras, dados[0].umidadeHoras],
                     borderWidth: 2,
                     tension: 0.1,
                     backgroundColor: 'blue',
@@ -3068,7 +3127,7 @@
         });
 
     }
-    
+
 
 
 
@@ -3077,6 +3136,204 @@
         let temperaturaAtual = dados.map(item => item.temperaturaAtual)
         var tempAtual = temperaturaAtual;
 
+        alertAcima();
+
+        function alertAcima() {
+
+            if (tempAtual > 20) {
+
+                var alerta_vermelhoAcima = 'Temperatura acima do adequado, necessário verificação urgente!';
+
+                // ENVIO DO ALERTA VERMELHO PARA O BANCO DE DADOS 
+
+                fetch("/dash/alertAcima", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+
+                        alertaVermelhoServer: alerta_vermelhoAcima
+                    }),
+                })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+
+                        if (resposta.ok) {
+
+                            console.log("DIv MEnsagem era pra aparecer");
+                            alerta.innerHTML =
+                                `
+                                <div class="mensagem-alerta">
+
+                                    <div class="mensagem-info">
+                                        <h1>Barril 5</h1>
+                                        <h3>${alerta_vermelhoAcima}</h3>
+                                        <small>Temperatura: ${tempAtual}</small>
+                                    </div>
+
+                                    <div class="alarme-sino"></div>
+
+                                </div>
+                                `;
+
+
+
+
+                        } else {
+
+
+                            console.log("Alerta vermelho acima da temperatura não foi enviado");
+                        }
+                    })
+                    .catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+
+
+                return false;
+
+            } else if (tempAtual >= 19 && tempAtual <= 20) {
+
+                var alerta_laranjaAcima = "Temperatura está se aproximando do máximo, necessário verificação";
+
+                // ENVIO DO ALERTA VERMELHO PARA O BANCO DE DADOS 
+                fetch("/dash/alertAcima", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+
+                        alertaVermelhoServer: alerta_laranjaAcima
+                    }),
+                })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+
+                        if (resposta.ok) {
+                            alerta.innerHTML =
+                                `
+                                <div class="mensagem-alerta">
+
+                                    <div class="mensagem-info">
+                                        <h1>Barril 5</h1>
+                                        <h3>${alerta_laranjaAcima}</h3>
+                                        <small>Temperatura: ${tempAtual}</small>
+                                    </div>
+
+                                    <div class="alarme-sino"></div>
+
+                                </div>
+                                `;
+
+                        } else {
+
+                            alert("Não gerou o alerta")
+                        }
+                    })
+                    .catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+
+
+                return false;
+            } else if (tempAtual <= 16 && tempAtual >= 15) {
+
+                var alerta_laranjaAbaixo = "Temperatura está aproximando do mínimo, necessário verificação";
+
+                // ENVIO DO ALERTA VERMELHO PARA O BANCO DE DADOS 
+                fetch("/dash/alertAcima", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+
+                        alertaVermelhoServer: alerta_laranjaAbaixo
+                    }),
+                })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+
+                        if (resposta.ok) {
+
+                            alerta.innerHTML =
+                                `
+                                <div class="mensagem-alerta">
+
+                                    <div class="mensagem-info">
+                                        <h1>Barril 5</h1>
+                                        <h3>${alerta_laranjaAbaixo}</h3>
+                                        <small>Temperatura: ${tempAtual}</small>
+                                    </div>
+
+                                    <div class="alarme-sino"></div>
+
+                                </div>
+                            `;
+                            // alert(alerta_vermelho);
+
+                        } else {
+                            console.log("Alerta vermelho acima da temperatura não foi enviado");
+                        }
+                    })
+                    .catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+
+
+                return false;
+            } else if (tempAtual < 15) {
+                var alerta_vermelhoAbaixo = "Temperatura abaixo do adequado, necessário verificação urgente!";
+
+                // ENVIO DO ALERTA VERMELHO PARA O BANCO DE DADOS 
+                fetch("/dash/alertAcima", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+
+                        alertaVermelhoServer: alerta_vermelhoAbaixo
+                    }),
+                })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+
+                        if (resposta.ok) {
+
+                            alerta.innerHTML =
+                                `
+                                <div class="mensagem-alerta">
+
+                                    <div class="mensagem-info">
+                                        <h1>Barril 5</h1>
+                                        <h3>${alerta_vermelhoAbaixo}</h3>
+                                        <small>Temperatura: ${tempAtual}</small>
+                                    </div>
+
+                                    <div class="alarme-sino"></div>
+
+                                </div>
+                            `;
+
+                            // alert(alerta_vermelho);
+
+                        } else {
+
+                            console.log("Alerta vermelho acima da temperatura não foi enviado");
+                        }
+                    })
+                    .catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+
+
+                return false;
+            }
+
+        }
 
 
         var gaugeTemp = Highcharts.chart('tempGrafico', {
@@ -3101,8 +3358,8 @@
                 size: '120%'
             },
             yAxis: {
-                min: 0,
-                max: 35,
+                min: 10,
+                max: 25,
                 tickPixelInterval: 72,
                 tickPosition: 'inside',
                 tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
@@ -3122,28 +3379,28 @@
 
                 plotBands: [{
                     from: 0,
-                    to: 10,
+                    to: 15,
                     color: '#FF0000',
                     thickness: 20
                 }, {
-                    from: 10,
-                    to: 15,
+                    from: 15,
+                    to: 16,
                     color: 'yellow',
                     thickness: 20
                 },
                 {
-                    from: 15,
-                    to: 20,
+                    from: 16,
+                    to: 19,
                     color: '#00FF00',
                     thickness: 20
                 },
                 {
-                    from: 20,
-                    to: 25,
+                    from: 19,
+                    to: 20,
                     color: 'yellow',
                     thickness: 20
                 }, {
-                    from: 25,
+                    from: 20,
                     to: 35,
                     color: '#FF0000',
                     thickness: 20
@@ -3299,31 +3556,41 @@
                 }
             }]
         });
+    }
+    function plotarGrafico_5(dados) {
+        let desconectados = dados.map(item => item.numBarrisNull);
+        sensor_qtd.innerHTML = `${desconectados}`;
+    }
+    function plotarGrafico_7(dados) {
+        let umidadeAbaixo = dados.map(item => item.UmidadeBaixa);
+        umidade_abaixo.innerHTML = `${umidadeAbaixo}`;
+    }
+    function plotarGrafico_6(dados) {
+        var umidadeAcima = dados.map(item => item.numBarrisUmidadeAlta);
+        umidade_acima.innerHTML = `${umidadeAcima}`;
+    }
+    function plotarGrafico_9(dados) {
+        let tempAbaixo = dados.map(item => item.numBarrisTempBaixa);
+        temperatura_abaixo.innerHTML = `${tempAbaixo}`;
+    }
+    function plotarGrafico_8(dados) {
+        let tempAcima = dados.map(item => item.numBarrisTempAlta);
+        temperatura_acima.innerHTML = `${tempAcima}`;
+    }
+    var nome = sessionStorage.NOME_USUARIO;
+    nomeCliente.innerHTML = `${nome}`;
+    function sair() {
+        sessionStorage.clear()
+    }
+
+    function plotarGrafico_10(dados) {
+        var alertas = dados.map(item => item.descricaoAviso);
+        var alertasHoras = dados.map(item => item.horarioAviso);
+        
+        console.log("dados plotar 10" + dados)
+        for (var i = 0; i <= 9; i++) {
+            div_alertas.innerHTML += `${alertas[i]} , ${alertasHoras[0]} <br>`;
         }
-            function plotarGrafico_5(dados) {
-                let desconectados = dados.map(item => item.numBarrisNull);
-                sensor_qtd.innerHTML += `${desconectados}`;
-            }
-            function plotarGrafico_7(dados) {
-                let umidadeAbaixo = dados.map(item => item.UmidadeBaixa);
-                umidade_abaixo.innerHTML += `${umidadeAbaixo}`;
-            }
-            function plotarGrafico_6(dados) {
-                var umidadeAcima = dados.map(item => item.numBarrisUmidadeAlta);
-                umidade_acima.innerHTML += `${umidadeAcima}`;
-            }
-            function plotarGrafico_9(dados) {
-                let tempAbaixo = dados.map(item => item.numBarrisTempBaixa);
-                temperatura_abaixo.innerHTML += `${tempAbaixo}`;
-            }
-            function plotarGrafico_8(dados) {
-                let tempAcima = dados.map(item => item.numBarrisTempAlta);
-                temperatura_acima.innerHTML += `${tempAcima}`;
-            }
-var nome = sessionStorage.NOME_USUARIO;
-nomeCliente.innerHTML += `${nome}`;
-function sair(){
-    sessionStorage.clear()
-}
+    }
 
 </script>

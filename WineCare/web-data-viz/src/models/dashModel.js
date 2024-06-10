@@ -5,7 +5,8 @@ function dashResultados(fkSensor) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function dashResultados(): ", fkSensor)
     var instrucaoSql = `
 
-select temperaturaAmbiente as 'temperaturaHoras', horarioData as 'HoraTemp' from dadosCaptados where fkSensor = '${fkSensor}';
+select temperaturaAmbiente as 'temperaturaHoras', horarioData as 'HoraTemp' from dadosCaptados where fkSensor = '${fkSensor}' ORDER BY horarioData desc
+limit 12;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -15,7 +16,8 @@ select temperaturaAmbiente as 'temperaturaHoras', horarioData as 'HoraTemp' from
 function dashResultados2(fkSensor) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function dashResultados2(): ", fkSensor)
     var instrucaoSql = `
-    select umidadeAmbiente as 'umidadeHoras', horarioData as 'HoraTemp' from dadosCaptados where fkSensor = '${fkSensor}';
+    select umidadeAmbiente as 'umidadeHoras', horarioData as 'HoraTemp' from dadosCaptados where fkSensor = '${fkSensor}' ORDER BY horarioData desc
+limit 12;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -126,6 +128,37 @@ function kpi5() {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+function alertAcima(alertaVermelho) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", alertaVermelho);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+        INSERT INTO Aviso (descricaoAviso) VALUES ('${alertaVermelho}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function alertas(){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function alertas():");
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+
+    // DATE_FORMAT(horarioAviso, '%d/%m/%Y %H:%i:%s')
+
+    var instrucaoSql = `
+        select descricaoAviso, horarioAviso from Aviso order by horarioAviso desc
+ limit 10;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+    
+
 module.exports = {
     dashResultados,
     dashResultados2,
@@ -135,6 +168,9 @@ module.exports = {
     kpi2,
     kpi3,
     kpi4,
-    kpi5
+    kpi5,
+    alertAcima,
+    alertas
+
 
 };

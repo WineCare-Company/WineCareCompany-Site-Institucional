@@ -29,4 +29,10 @@ router.get("/kpi4", function(req,res){
 router.get("/kpi5", function(req,res){
     dashController.kpi5(req,res);
 });
+router.post("/alertAcima", function (req, res) {
+    dashController.alertAcima(req, res);
+});
+router.get("/alertas", function (req, res) {
+    dashController.alertas(req, res);
+});
 module.exports = router;
