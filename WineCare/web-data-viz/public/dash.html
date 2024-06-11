@@ -23,7 +23,6 @@
 
 <body>
 
-
     <!-- CONTAINER PRINCIPAL -->
 
     <main>
@@ -37,7 +36,7 @@
 
             <div class="perfil">
 
-                <img src="../assets/img/dashboard/perfil.png">
+                <img src="./assets/img/dashboard/perfil2.png">
                 <h3 id="nomeCliente"></h3>
 
             </div>
@@ -51,11 +50,9 @@
                 <!-- DASHBOARD - NOTIFICAÇÕES - CONFIGURAÇÕES -->
 
                 <ul>
-                    <li id="dashboard"><img class="icone" src="../assets/img/dashboard/dash.png">DashBoard</li>
-                    <li id="notificacoes" onclick="alertas()"><img class="icone"
-                            src="../assets/img/dashboard/bell.png">Notificações</li>
-                    <li id="configuracoes"><img class="icone" src="../assets/img/dashboard/settings.png">Configuracões
-                    </li>
+                    <li id="dashboard" style="color: #e1186c;"><img class="icone" src="./assets/img/dashboard/dash.png">DashBoard</li>
+                    <li id="notificacoes" onclick="alertas()"><img class="icone" src="./assets/img/dashboard/bell.png">Notificações</li>
+                    <!-- <li id="configuracoes"><img class="icone" src="./assets/img/dashboard/settings.png">Configuracões</li> -->
                 </ul>
 
 
@@ -63,7 +60,7 @@
 
                 <div class="sair">
 
-                    <img class="icone-sair" src="../assets/img/dashboard/logout.png">
+                    <img class="icone-sair" src="./assets/img/dashboard/logout.png">
                     <p><a onclick="sair()" href="login.html">Sair da Conta</a></p>
 
                 </div>
@@ -76,6 +73,7 @@
         <!-- CONTAINER DO LADO DIREITO -->
 
         <div class="container-direito">
+
 
             <!-- CONTAINER VINICOLA -->
 
@@ -105,7 +103,7 @@
 
                             <h3>Vinícola 1</h3>
 
-                            <img src="../assets/img/dashboard/vinicola.png" alt="">
+                            <img class="icon_casa" src="./assets/img/dashboard/vinicola.png" alt="">
 
                         </div>
 
@@ -137,7 +135,7 @@
 
                             <div class="image">
 
-                                <img src="../assets/img/dashboard/sensor.png" alt="">
+                                <img src="./assets/img/dashboard/sensor.png" alt="">
 
                             </div>
 
@@ -155,7 +153,7 @@
 
                             <div class="image">
 
-                                <img src="../assets/img/dashboard/umidade-elevada.png" alt="">
+                                <img src="./assets/img/dashboard/umidade-roxo.png" alt="">
 
                             </div>
 
@@ -175,7 +173,7 @@
 
                             <div class="image">
 
-                                <img src="../assets/img/dashboard/umidade-baixa.png" alt="">
+                                <img src="./assets/img/dashboard/umidade-verde.png" alt="">
 
                             </div>
 
@@ -196,7 +194,7 @@
 
                             <div class="image">
 
-                                <img src="../assets/img/dashboard/gelado.png" alt="">
+                                <img src="./assets/img/dashboard/gelado.png" alt="">
 
                             </div>
 
@@ -216,7 +214,7 @@
 
                             <div class="image">
 
-                                <img src="../assets/img/dashboard/quente.png" alt="">
+                                <img src="./assets/img/dashboard/quente.png" alt="">
 
                             </div>
 
@@ -251,7 +249,8 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 1</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <img class="red_alert" src="./assets/img/dashboard/sensor.png" alt="">
                                 </div>
 
                             </div>
@@ -260,7 +259,8 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 2</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <img class="red_alert" src="./assets/img/dashboard/seta-roxo.png" alt="">
                                 </div>
 
                             </div>
@@ -269,7 +269,8 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 3</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <!-- <img class="red_alert" src="./assets/img/dashboard/seta-verde.png" alt=""> -->
                                 </div>
 
                             </div>
@@ -278,16 +279,22 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 4</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <img class="red_alert" src="./assets/img/dashboard/gelado.png" alt="">
+
                                 </div>
 
                             </div>
 
                             <div id="card-barril5">
 
-                                <div class="card-barril">
+                                <div class="card-barril" id="cardzin5">
                                     <h3>Barril 5</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <img id="img_barril_quente" style="display: none;" class="red_alert" src="./assets/img/dashboard/quente.png" alt="">
+                                    <img id="img_barril_gelado" style="display: none;" class="red_alert" src="./assets/img/dashboard/gelado.png" alt="">
+
+
                                 </div>
 
                             </div>
@@ -296,7 +303,9 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 6</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <img class="red_alert" src="./assets/img/dashboard/gelado.png" alt="">
+
                                 </div>
 
                             </div>
@@ -305,7 +314,8 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 7</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <img class="red_alert" src="./assets/img/dashboard/quente.png" alt="">
                                 </div>
 
                             </div>
@@ -314,7 +324,8 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 8</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
+                                    <img class="red_alert" src="./assets/img/dashboard/quente.png" alt="">
                                 </div>
 
                             </div>
@@ -323,7 +334,7 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 9</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
                                 </div>
 
                             </div>
@@ -332,7 +343,7 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 10</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
                                 </div>
 
                             </div>
@@ -341,7 +352,7 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 11</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
                                 </div>
 
                             </div>
@@ -350,7 +361,7 @@
 
                                 <div class="card-barril">
                                     <h3>Barril 12</h3>
-                                    <img src="../assets/img/dashboard/barril.png" alt="">
+                                    <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
                                 </div>
 
                             </div>
@@ -380,8 +391,11 @@
 
                                         <div class="grafico">
 
+
+
                                             <!-- TITULO DO GRAFICO -->
 
+                                            <!-- <button><</button> -->
                                             <div class="titulo">
 
                                                 <p>Histórico de Temperaturas Diária - (Barril Nº 1)</p>
@@ -440,7 +454,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/nada.png" alt="">
+                                                <img src="./assets/img/dashboard/nada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -525,7 +539,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-adequada.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -534,7 +548,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-acima.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -619,7 +633,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-adequada.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -628,7 +642,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -713,7 +727,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-abaixo.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-abaixo.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -722,7 +736,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -814,7 +828,9 @@
 
                                         <div class="metricas-baixo" id="divTempGrafico">
 
-                                            <div id="tempGrafico2"></div>
+                                            <div id="tempGrafico2">
+                                                
+                                            </div>
 
                                         </div>
 
@@ -897,7 +913,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-acima.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -906,7 +922,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -991,7 +1007,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-acima.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -1000,7 +1016,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -1085,7 +1101,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-acima.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -1094,7 +1110,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -1179,7 +1195,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-acima.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -1188,7 +1204,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -1273,7 +1289,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-acima.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -1282,7 +1298,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -1367,7 +1383,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-acima.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -1376,7 +1392,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -1461,7 +1477,7 @@
                                             </div>
 
                                             <div class="temperatura">
-                                                <img src="../assets/img/dashboard/temp-acima.png" alt="">
+                                                <img src="./assets/img/dashboard/temp-acima.png" alt="">
                                                 <p>Temperatura</p>
                                             </div>
 
@@ -1470,7 +1486,7 @@
                                         <div class="metricas-baixo">
 
                                             <div class="umidade">
-                                                <img src="../assets/img/dashboard/umidade-adequada.png" alt="">
+                                                <img src="./assets/img/dashboard/umidade-adequada.png" alt="">
                                                 <p>Umidade</p>
                                             </div>
 
@@ -1503,7 +1519,68 @@
                     </div>
 
                     <div class="notificacoes-conteudo">
-                        <div id="div_alertas" onclick="alertas()"></div>
+
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        <div id="div_alertas">
+                            Temperatura acima do adequado, necessário verificação urgente!
+                            <div id="div_alertas2">
+                                2024-06-11T23:01:54.000Z
+                            </div>
+                        </div>
+                        
                     </div>
 
                 </div>
@@ -1531,14 +1608,12 @@
 
         </div>
 
-        </div>
-
-
     </main>
 
     <div id="alerta">
-
     </div>
+
+    <button id="btnVoltar" style="display: none;">Voltar</button>
 
 </body>
 
@@ -2737,15 +2812,19 @@
     var listaTempHora = [];
     obterDadosGrafico();
     obterDadosGrafico2();
+
     function obterDadosGrafico() {
+
         fetch("/dash/dashResultados3", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
+            
             body: JSON.stringify({
                 fkSensor: fkSensor
             })
+
         }).then(function (resposta) {
             console.log("dashResult3 caiu")
 
@@ -2805,6 +2884,7 @@
                 });
 
             }
+
         }).catch(function (erro) {
             console.log(erro);
         })
@@ -3133,6 +3213,7 @@
 
 
     function plotarGrafico_3(dados) {
+        
         let temperaturaAtual = dados.map(item => item.temperaturaAtual)
         var tempAtual = temperaturaAtual;
 
@@ -3140,7 +3221,12 @@
 
         function alertAcima() {
 
-            if (tempAtual > 20) {
+            if (tempAtual > 18) {
+
+                document.getElementById("cardzin5").style.border = '4px solid red';
+                document.getElementById("cardzin5").style.borderRadius = '12px';
+                document.getElementById("img_barril_quente").style.display = 'block';
+                
 
                 var alerta_vermelhoAcima = 'Temperatura acima do adequado, necessário verificação urgente!';
 
@@ -3195,6 +3281,7 @@
 
             } else if (tempAtual >= 19 && tempAtual <= 20) {
 
+
                 var alerta_laranjaAcima = "Temperatura está se aproximando do máximo, necessário verificação";
 
                 // ENVIO DO ALERTA VERMELHO PARA O BANCO DE DADOS 
@@ -3238,7 +3325,8 @@
 
 
                 return false;
-            } else if (tempAtual <= 16 && tempAtual >= 15) {
+            } else if (tempAtual >= 15 && tempAtual <= 16) {
+
 
                 var alerta_laranjaAbaixo = "Temperatura está aproximando do mínimo, necessário verificação";
 
@@ -3285,6 +3373,11 @@
 
                 return false;
             } else if (tempAtual < 15) {
+
+                document.getElementById("cardzin5").style.border = '4px solid red';
+                document.getElementById("cardzin5").style.borderRadius = '12px';
+                document.getElementById("img_barril_gelado").style.display = 'block';
+
                 var alerta_vermelhoAbaixo = "Temperatura abaixo do adequado, necessário verificação urgente!";
 
                 // ENVIO DO ALERTA VERMELHO PARA O BANCO DE DADOS 
@@ -3586,10 +3679,14 @@
     function plotarGrafico_10(dados) {
         var alertas = dados.map(item => item.descricaoAviso);
         var alertasHoras = dados.map(item => item.horarioAviso);
-        
+
+        div_alertas.innerHTML = "";
+        div_alertas2.innerHTML = "";
+
         console.log("dados plotar 10" + dados)
         for (var i = 0; i <= 9; i++) {
-            div_alertas.innerHTML += `${alertas[i]} , ${alertasHoras[0]} <br>`;
+            div_alertas.innerHTML += alertas[i];
+            div_alertas2.innerHTML += alertasHoras[i];
         }
     }
 

@@ -131,6 +131,14 @@ main {
     border-radius: 10px;
     background-color: rgb(195, 21, 94);
     color: white;
+    transition: 0.2s;
+}
+
+.form-login button:hover {
+    transform: scale(1.1);
+    background-color: rgb(171, 11, 78);
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 
@@ -186,8 +194,13 @@ main {
     border-radius: 10px;
     background-color: white;
     color: black;
+    transition: 0.2s;
+
 }
 
 .cadastrar button:hover {
     cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(212, 212, 212);
+    transition: 0.2s;
 }
