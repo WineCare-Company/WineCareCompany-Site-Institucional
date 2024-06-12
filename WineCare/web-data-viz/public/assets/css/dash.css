@@ -915,7 +915,7 @@ canvas {
 }
 
 #div_alertas:hover {
-    transform: scale(1.025);
+    transform: scale(1.01);
     transition: 0.2s;
     background-color: #f3d0d3;
 }
