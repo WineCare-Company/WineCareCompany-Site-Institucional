@@ -319,7 +319,6 @@
                                 <div class="card-barril">
                                     <h3>Barril 7</h3>
                                     <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
-                                    <img class="red_alert" src="./assets/img/dashboard/quente.png" alt="">
                                 </div>
 
                             </div>
@@ -329,7 +328,6 @@
                                 <div class="card-barril">
                                     <h3>Barril 8</h3>
                                     <img class="icon_barril" src="./assets/img/dashboard/barril.png" alt="">
-                                    <img class="red_alert" src="./assets/img/dashboard/quente.png" alt="">
                                 </div>
 
                             </div>
@@ -1526,86 +1524,12 @@
 
                     <div class="notificacoes-conteudo">
 
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
-                        </div>
-                        <div id="div_alertas">
-                            Temperatura acima do adequado, necessário verificação urgente!
-                            <div id="div_alertas2">
-                                2024-06-11T23:01:54.000Z
-                            </div>
+                        <div id="divDasNotificacoes">
+
+                            <!-- NOTIFICAÇÕES SERAM MOSTRADAS AQUI -->
+
                         </div>
 
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONFIGURAÇÕES -->
-
-            <div id="configuracoes-content" style="display: none;">
-
-                <div class="configuracoes-container">
-
-                    <div class="configuracoes-titulo">
-                        <h1>Configurações</h1>
-                    </div>
-
-                    <div class="configuracoes-conteudo">
-                        <h1>Implementação Futura!</h1>
                     </div>
 
                 </div>
@@ -1617,6 +1541,7 @@
     </main>
 
     <div id="alerta">
+
     </div>
 
     <button id="btnVoltar" style="display: none;">Voltar</button>
@@ -3235,7 +3160,7 @@
     }
 
 
-
+    window.temperaturaGlobal;
 
 
     function plotarGrafico_3(dados) {
@@ -3243,15 +3168,17 @@
         let temperaturaAtual = dados.map(item => item.temperaturaAtual)
         var tempAtual = temperaturaAtual;
 
+        temperaturaGlobal = tempAtual;
+
         alertAcima();
 
         function alertAcima() {
 
-            if (tempAtual > 18) {
+            if (tempAtual > 20) {
 
                 document.getElementById("cardzin5").style.border = '4px solid red';
                 document.getElementById("cardzin5").style.borderRadius = '12px';
-                document.getElementById("img_barril_quente").style.display = 'block';
+                document.getElementById("img_barril_quente").style.display = 'block';          
 
 
                 var alerta_vermelhoAcima = 'Temperatura acima do adequado, necessário verificação urgente!';
@@ -3279,7 +3206,7 @@
                                 <div class="mensagem-alerta">
 
                                     <div class="mensagem-info">
-                                        <h1>Barril 5</h1>
+                                        <h1>Vinicola 1 - Barril 5</h1>
                                         <h3>${alerta_vermelhoAcima}</h3>
                                         <small>Temperatura: ${tempAtual}</small>
                                     </div>
@@ -3330,7 +3257,7 @@
                                 <div class="mensagem-alerta">
 
                                     <div class="mensagem-info">
-                                        <h1>Barril 5</h1>
+                                        <h1>Vinicola 1 - Barril 5</h1>
                                         <h3>${alerta_laranjaAcima}</h3>
                                         <small>Temperatura: ${tempAtual}</small>
                                     </div>
@@ -3377,7 +3304,7 @@
                                 <div class="mensagem-alerta">
 
                                     <div class="mensagem-info">
-                                        <h1>Barril 5</h1>
+                                        <h1>Vinicola 1 - Barril 5</h1>
                                         <h3>${alerta_laranjaAbaixo}</h3>
                                         <small>Temperatura: ${tempAtual}</small>
                                     </div>
@@ -3427,7 +3354,7 @@
                                 <div class="mensagem-alerta">
 
                                     <div class="mensagem-info">
-                                        <h1>Barril 5</h1>
+                                        <h1>Vinicola 1 - Barril 5</h1>
                                         <h3>${alerta_vermelhoAbaixo}</h3>
                                         <small>Temperatura: ${tempAtual}</small>
                                     </div>
@@ -3706,13 +3633,21 @@
         var alertas = dados.map(item => item.descricaoAviso);
         var alertasHoras = dados.map(item => item.horarioAviso);
 
-        div_alertas.innerHTML = "";
-        div_alertas2.innerHTML = "";
+        divDasNotificacoes.innerHTML = '';
 
         console.log("dados plotar 10" + dados)
         for (var i = 0; i <= 9; i++) {
-            div_alertas.innerHTML += alertas[i];
-            div_alertas2.innerHTML += alertasHoras[i];
+            divDasNotificacoes.innerHTML +=
+            `
+            <div id="div_alertas">
+            ${alertas[i]} (Vinicola 1 - Barril 5)
+                <div id="div_alertas2">
+                    ${alertasHoras[i]}
+                </div>
+
+            </div>
+
+            `
         }
     }
 

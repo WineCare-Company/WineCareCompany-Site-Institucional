@@ -585,14 +585,29 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("card-barril2").style.display = "none";
         document.getElementById("card-barril3").style.display = "none";
         document.getElementById("card-barril4").style.display = "none";
-        document.getElementById("card-barril5").style.display = "none";
         document.getElementById("card-barril6").style.display = "none";
-        document.getElementById("card-barril7").style.display = "block";
-        document.getElementById("card-barril8").style.display = "block";
+        document.getElementById("card-barril7").style.display = "none";
+        document.getElementById("card-barril8").style.display = "none";
         document.getElementById("card-barril9").style.display = "none";
         document.getElementById("card-barril10").style.display = "none";
         document.getElementById("card-barril11").style.display = "none";
         document.getElementById("card-barril12").style.display = "none";
+
+        var temperaturaGlobal = window.temperaturaGlobal;
+
+        console.log(temperaturaGlobal);
+
+        if (temperaturaGlobal > 20) {
+
+            document.getElementById("card-barril5").style.display = "block";
+
+        }
+
+        else {
+            document.getElementById("card-barril5").style.display = "none";
+
+        }
+
 
     });
 
@@ -614,6 +629,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("vinicola-container").style.display = "none";
         document.getElementById("barril-container").style.display = "block";
         document.getElementById("barril-cards-content").style.display = "block";
+
+        document.getElementById("card5").style.backgroundColor = "transparent";
+        document.getElementById("card1").style.backgroundColor = "transparent";
+        document.getElementById("card2").style.backgroundColor = "transparent";
+        document.getElementById("card3").style.backgroundColor = "transparent";
+        document.getElementById("card4").style.backgroundColor = "transparent";
 
         document.getElementById("card-barril1").style.display = "block";
         document.getElementById("card-barril2").style.display = "block";
